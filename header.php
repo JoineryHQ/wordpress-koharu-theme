@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
     <div class="site-header__inner">
         <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></p>
         <?php if (has_nav_menu('primary')) : ?>
-            <nav class="site-nav" aria-label="<?php esc_attr_e('Primary Navigation', 'nmregistry-theme'); ?>">
+            <nav class="site-nav" aria-label="<?php esc_attr_e('Primary Navigation', 'koharu-theme'); ?>">
                 <?php
                 wp_nav_menu([
                     'theme_location' => 'primary',

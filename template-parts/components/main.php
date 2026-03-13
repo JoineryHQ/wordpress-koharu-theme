@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<!-- start nmregistry_theme_get_main -->
+<!-- start koharu_theme_get_main -->
 <main class="site-main">
 <?php
 if (have_posts()) {
@@ -30,4 +30,4 @@ else {
 }
 ?>
 </main>
-<!-- end nmregistry_theme_get_main -->
+<!-- end koharu_theme_get_main -->

@@ -4,5 +4,5 @@ if (!defined('ABSPATH')) {
 }
 
 get_header();
-nmregistry_theme_get_main();
+koharu_theme_get_main();
 get_footer();
