@@ -1,0 +1,97 @@
+/*
+Theme Name: New Mexico Registry Theme
+Theme URI: https://example.com/
+Author: OpenAI
+Author URI: https://openai.com/
+Description: Minimal custom starter theme for the Registry site.
+Version: 0.1.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+Text Domain: nmregistry-theme
+*/
+:root {
+  --content-width: 72rem;
+  --site-padding: 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #222;
+  background: #fff;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.site-header,
+.site-footer,
+.site-main {
+  padding-left: var(--site-padding);
+  padding-right: var(--site-padding);
+}
+
+.site-header__inner,
+.site-footer__inner,
+.page-layout,
+.home-section,
+.hero {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.site-header {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.site-title a {
+  text-decoration: none;
+}
+
+.site-main {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.hero {
+  padding: 3rem 0;
+}
+
+.hero__title,
+.page-title {
+  margin-top: 0;
+}
+
+.home-section + .home-section {
+  margin-top: 2.5rem;
+}
+
+.site-footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid #ddd;
+}
+
+/*# sourceMappingURL=style.css.map */
