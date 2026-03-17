@@ -1,6 +1,6 @@
 <?php
 if (!defined('ABSPATH')) {
-    exit;
+  exit;
 }
 
 use Koharu_Mods as KM;
@@ -16,11 +16,13 @@ use Koharu_Mods as KM;
           <p class="hero__text"><?= KM::getMod('koharu_hero_subtitle'); ?></p>
         <?php endif; ?>
 
-        <a class="button-cta-cyan shadow-cyan" href="<?= KM::getMod('koharu_hero_cta_url') ?>"><?= KM::getMod('koharu_hero_cta_text') ?></a>
-
-        <div class="provider-link" style="display: inline;">
-          <?= KM::getMod('koharu_hero_cta_secondary_html'); ?>
+        <div id="hero-cta">
+          <a class="button-cta-cyan shadow-cyan" href="<?= KM::getMod('koharu_hero_cta_url') ?>"><?= KM::getMod('koharu_hero_cta_text') ?></a>
+          <div class="provider-link" style="display: inline;">
+            <?= KM::getMod('koharu_hero_cta_secondary_html'); ?>
+          </div>
         </div>
+
       </div>
     </div>
   </div>

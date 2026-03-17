@@ -4,7 +4,6 @@ header {
   padding: 18px 0;
   border-bottom: 1px solid rgba(31,44,44,0.10);
   background: $bg;
-  position: sticky;
   top: 0;
   z-index: 5;
 
@@ -22,7 +21,6 @@ header {
     display: flex;
     align-items: center;
     gap: 12px;
-    min-width: 240px;
     text-decoration: none;
     img{
       width: 46px;
@@ -86,4 +84,10 @@ header {
     top: 12px;
   }
 
+}
+
+@include respond(md) {
+  header {
+    position: sticky;    
+  }
 }

@@ -1,65 +1,64 @@
 /* _hero.scss */
 /* Hero */
-.hero{
-  /*padding: 46px 0 0;*/
-}
-.hero-card{    /* display: grid; */
-  grid-template-columns: 1.1fr 1fr;
-  gap: 0;
-  /* background: rgba(255, 255, 255, 0.35); */
-  /* border: 1px solid rgba(31, 44, 44, 0.10); */
-  /* border-radius: 22px; */
-  overflow: hidden;
-  position: relative;
-}
-.hero-copy{
-  padding: 46px 44px;
+section.hero{
+  .hero-card{
+    grid-template-columns: 1.1fr 1fr;
+    gap: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-copy{
+    padding: 46px 44px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, .85));
+  }
+  h1{
+    font-family: $font-family-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    font-size: 54px;
+    line-height: 1.05;
+    margin: 0 0 14px;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+  }
+  p{
+    margin: 0 0 22px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
+    /* max-width: 36ch; */
+    text-shadow: 2px 2px 2px black;
+  }
 
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: linear-gradient(transparent, rgba(0, 0, 0, .85));
-}
-.hero h1{
-  font-family: $font-family-serif;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  font-size: 54px;
-  line-height: 1.05;
-  margin: 0 0 14px;
-  color: white;
-  text-shadow: 5px 5px 5px black;
-}
-.hero p{
-  margin: 0 0 22px;
-  font-size: 18px;
-  line-height: 1.6;
-  color: white;
-  /* max-width: 36ch; */
-  text-shadow: 2px 2px 2px black;
-}
+  div#hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    .provider-link{
+      margin-top: 14px;
+      font-size: 14px;
+      color: white;
+      text-shadow: 2px 2px 2px black;
+      display: inline;
+      margin-left: 1em;
+    }
+    .provider-link a{
+      color: $jasmine;
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 1px solid $jasmine;
+      text-shadow: none;
+      margin-left: .5em;
+    }
+  }
 
-.provider-link{
-  margin-top: 14px;
-  font-size: 14px;
-  color: white;
-  text-shadow: 2px 2px 2px black;
-  display: inline;
-  margin-left: 1em;
-}
-.provider-link a{
-  color: $jasmine;
-  text-decoration: none;
-  font-weight: 700;
-  border-bottom: 1px solid $jasmine;
-  text-shadow: none;
-  margin-left: .5em;
-}
-
-.hero-image    {
-  height: 600px;
-  background: url(pexels-olly-3768114.jpg);
-  background-size: cover;
-  background-position: center;
-  position: relative;
+  .hero-image    {
+    height: 600px;
+    background: url(pexels-olly-3768114.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
 }

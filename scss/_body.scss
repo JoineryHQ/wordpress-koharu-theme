@@ -4,15 +4,17 @@ body{
   margin: 0;
   background: $bg;
 
+  // "flex" method to ensure footer stays at bottom of page even on short-content.
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Set minimum height to viewport height */
+  min-height: 100vh;
 }
 
+// WP adds padding when admin bar is shown, so we remove that.
 body.admin-bar {
   min-height: calc(100vh - 32px);
 }
-
+// WP adds DIFFERENT padding when admin bar is shown on narrow screens --so we remove that, too.
 @media screen and ( max-width: 782px ) {
   body.admin-bar {
     min-height: calc(100vh - 46px);
