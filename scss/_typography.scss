@@ -1,0 +1,28 @@
+/* _typography.scss */
+
+* {
+  font-family: $font-family-sans;
+  color: $text;
+}
+h1, h2, h3, h4 {
+  font-family: $font-family-serif;
+  font-weight: normal;
+}
+
+h1 {
+
+}
+h2 {
+  color: $pine-blue;
+  font-size: 34px;
+  font-weight: 600;
+}
+h3 {
+  font-size: 22px;
+  line-height: 1.45;
+}
+
+
+a{
+  color: inherit;
+}

@@ -1,71 +1,77 @@
 <?php
+
 if (!defined('ABSPATH')) {
-    exit;
+  exit;
 }
 
-function _koharu_theme_setup() {
-    add_theme_support('title-tag');
-    add_theme_support('post-thumbnails');
-    add_theme_support('html5', [
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-        'style',
-        'script',
-    ]);
+require_once get_template_directory() . '/inc/class-koharu-mods.php';
 
-    register_nav_menus([
-        'primary' => __('Primary Menu', 'koharu-theme'),
-    ]);
+function _koharu_theme_setup() {
+  add_theme_support('title-tag');
+  add_theme_support('post-thumbnails');
+  add_theme_support('html5', [
+    'search-form',
+    'comment-form',
+    'comment-list',
+    'gallery',
+    'caption',
+    'style',
+    'script',
+  ]);
+
+  register_nav_menus([
+    'primary' => __('Primary Menu', 'koharu-theme'),
+    'footer' => __('Footer Menu', 'koharu-theme'),
+  ]);
 }
 add_action('after_setup_theme', '_koharu_theme_setup');
 
 function _koharu_theme_enqueue_assets() {
-    wp_enqueue_style(
-        'koharu-theme-style',
-        get_stylesheet_uri(),
-        [],
-        wp_get_theme()->get('Version')
-    );
+  wp_enqueue_style(
+    'koharu-theme-style',
+    get_stylesheet_uri(),
+    [],
+    wp_get_theme()->get('Version')
+  );
 }
 add_action('wp_enqueue_scripts', '_koharu_theme_enqueue_assets');
 
-function koharu_customizer_text($wp_customize, $section, $id, $label, $default = '') {
-  $wp_customize->add_setting($id, [
-    'default' => $default,
-    'sanitize_callback' => 'sanitize_text_field',
-  ]);
-  $wp_customize->add_control($id, [
-    'label' => $label,
-    'section' => $section,
-    'type' => 'text',
-  ]);
+function koharu_tinymce_formats($init) {
+  $style_formats = [
+    [
+      'title' => 'Action card list',
+      'selector' => 'ol',
+      'classes' => 'action-card-list',
+    ],
+    [
+      'title' => 'Checkbox list',
+      'selector' => 'ul',
+      'classes' => 'checkbox-list',
+    ],
+    [
+      'title' => 'CTA Button Red',
+      'selector' => 'a',
+      'classes' => 'button-cta-red'
+    ],
+    [
+      'title' => 'CTA Button Cyan',
+      'selector' => 'a',
+      'classes' => 'button-cta-cyan'
+    ],
+  ];
+  $init['style_formats'] = wp_json_encode($style_formats);
+  $init['toolbar2'] .= ",styleselect";
+  return $init;
 }
+add_filter('tiny_mce_before_init', 'koharu_tinymce_formats');
 
-function _koharu_customize_register($wp_customize) {
-
-  $wp_customize->add_section('koharu_hero_section', [
-    'title' => 'Homepage Hero',
-    'priority' => 30,
-  ]);
-
-
-  koharu_customizer_text(
-    $wp_customize,
-    'registry_hero',
-    'hero_title',
-    'Hero Title',
-    'Find Respite Care in New Mexico'
-  );
-
-  koharu_customizer_text(
-    $wp_customize,
-    'registry_hero',
-    'hero_subtitle',
-    'Hero Subtitle'
-  );
-  
+/**
+ * Registers an editor stylesheet for the theme.
+ */
+function _koharu_add_editor_styles() {
+    add_editor_style( 'style.css' );
 }
-add_action('customize_register', '_koharu_customize_register');
+add_action( 'admin_init', '_koharu_add_editor_styles' );
+
+
+add_action('customize_register', 'Koharu_Mods::registerMods');

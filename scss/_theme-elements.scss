@@ -1,0 +1,118 @@
+/* theme-elements.scss */
+
+
+blockquote {
+  border-left: 3px solid $pine-blue;
+  padding-left: 1em;
+}
+
+hr {
+  width: 160px;
+  margin: 60px auto;
+  opacity: 0.9;
+  border-top: 3px solid $flag-red;
+  border-radius: $radius-pill;
+}
+
+ul.checkbox-list {
+  display: grid;
+  gap: 14px;
+  justify-content: center;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 0 10px;
+  li {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 12px;
+    align-items: start;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.55;
+    color: rgba(31, 44, 44, 0.85);
+  }
+  li::before {
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
+    line-height: 0;
+    height: 15px;
+    width: 15px;
+    padding: 5px;
+    border-radius: 7px;
+    background: #8fa98f;
+  }
+}
+
+ol.action-card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 980px;
+  margin: 0 auto 2em;
+  counter-reset: item;
+  li {
+    list-style-type: none;
+    display: grid;
+    align-items: center;
+    text-align: left;
+    grid-template-columns: 54px 1fr;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: $jasmine;
+    font-weight: 600;
+  }
+  li::before {
+    content: counter(item) " ";
+    counter-increment: item;
+    font-family: $font-family-serif;
+    color: $pine-blue;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+  }
+}
+
+
+
+
+a.button-cta-red,
+a.button-cta-cyan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: $radius-pill;
+  font-weight: 700;
+  border: 2px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
+  user-select: none;
+
+  // box shadow for light backgrounds:
+  box-shadow: 0 8px 18px rgba(143, 143, 143, 0.5);  
+  
+  // shadowed white text:
+  color: #fff;
+  text-shadow: 2px 2px black;
+}
+a.button-cta-red {
+  // specific for red:
+  background: $flag-red;
+}
+a.button-cta-cyan {
+  // specific for cyan:
+  background: $dark-cyan;
+}
+
+a.shadow-cyan,
+.shadow-cyan {
+  // cyan shadow (for dark backgrounds)
+  box-shadow: 0 8px 18px rgba(30,143,141,0.18);  
+}
+
+
+
+

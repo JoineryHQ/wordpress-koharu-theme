@@ -1,0 +1,20 @@
+/* _body.scss */
+
+body{
+  margin: 0;
+  background: $bg;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Set minimum height to viewport height */
+}
+
+body.admin-bar {
+  min-height: calc(100vh - 32px);
+}
+
+@media screen and ( max-width: 782px ) {
+  body.admin-bar {
+    min-height: calc(100vh - 46px);
+  }
+}

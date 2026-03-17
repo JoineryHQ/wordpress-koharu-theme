@@ -1,0 +1,32 @@
+/* _variables.scss */
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// Typography
+$font-family-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+$font-family-serif: "Lora", Georgia, serif;
+
+// Layout
+$radius-pill: 999px;
+$shadow: 0 10px 28px rgba(31,44,44,0.10);
+$border: 1px solid rgba(31,44,44,0.12);
+  
+// Colors:
+$old-lace: #f8f4ec;  /* page background */
+$dark-cyan:   #1e8f8d;  /* primary brand */
+$pine-blue:   #4f6e6e;  /* secondary / UI */
+$muted-teal:  #8fa98f;  /* accent */
+$flag-red:    #c72c30;  /* CTA / alerts */
+$jasmine:     #f4db78;  /* highlight / callout */
+$dark-charcoal:   #2F3A3A;  /* footer / deep anchors */
+$jet-black:   #1f2c2c;  /* footer / deep anchors */
+$text:        #1f2c2c;  /* body text */
+
+// Roles
+$bg: $old-lace;
