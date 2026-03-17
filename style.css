@@ -29,18 +29,23 @@ Text Domain: koharu-theme
 
 h1, h2, h3, h4 {
   font-family: "Lora", Georgia, serif;
-  font-weight: normal;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 54px;
+  line-height: 1.05;
 }
 
 h2 {
-  color: #4f6e6e;
   font-size: 34px;
-  font-weight: 600;
+  color: #4f6e6e;
 }
 
 h3 {
   font-size: 22px;
   line-height: 1.45;
+  font-weight: normal;
 }
 
 a {
@@ -173,6 +178,9 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+body main.site-main {
+  flex: 1;
+}
 
 body.admin-bar {
   min-height: calc(100vh - 32px);
@@ -186,10 +194,8 @@ body.admin-bar {
 /* _header.scss */
 header {
   padding: 18px 0;
-  border-bottom: 1px solid rgba(31, 44, 44, 0.1);
   background: #f8f4ec;
   top: 0;
-  z-index: 5;
 }
 header nav.site-nav {
   display: none;
@@ -211,15 +217,15 @@ header a.brand img {
   height: 46px;
   object-fit: contain;
 }
-header .brand-name {
+header a.brand .brand-name {
   line-height: 1.05;
 }
-header .brand-name .top {
+header a.brand .brand-name .top {
   font-family: "Lora", Georgia, serif;
   font-size: 18px;
   opacity: 0.85;
 }
-header .brand-name .bottom {
+header a.brand .brand-name .bottom {
   font-family: "Lora", Georgia, serif;
   font-size: 24px;
   font-weight: 600;
@@ -230,25 +236,25 @@ header .header-actions {
   align-items: center;
   gap: 18px;
 }
-header .icon-link {
-  display: inline-flex;
+header .header-actions a.search-link {
+  display: none;
   align-items: center;
   gap: 8px;
   text-decoration: none;
   font-weight: 600;
   color: #4f6e6e;
 }
-header .icon {
+header .header-actions a.search-link .search-icon {
   width: 18px;
   height: 18px;
   display: inline-block;
 }
-header .hamburger {
+header .header-actions .hamburger {
   width: 22px;
   height: 14px;
   position: relative;
 }
-header .hamburger span {
+header .header-actions .hamburger span {
   position: absolute;
   left: 0;
   right: 0;
@@ -256,59 +262,58 @@ header .hamburger span {
   background: #4f6e6e;
   border-radius: 999px;
 }
-header .hamburger span:nth-child(1) {
+header .header-actions .hamburger span:nth-child(1) {
   top: 0;
 }
-header .hamburger span:nth-child(2) {
+header .header-actions .hamburger span:nth-child(2) {
   top: 6px;
 }
-header .hamburger span:nth-child(3) {
+header .header-actions .hamburger span:nth-child(3) {
   top: 12px;
 }
 
+@media (min-width: 576px) {
+  header .header-actions a.search-link {
+    display: inline-flex;
+  }
+}
 @media (min-width: 768px) {
   header {
     position: sticky;
+    z-index: 5;
   }
 }
 /* _hero.scss */
 /* Hero */
-section.hero .hero-card {
-  grid-template-columns: 1.1fr 1fr;
-  gap: 0;
+section.hero {
   overflow: hidden;
   position: relative;
 }
 section.hero .hero-copy {
-  padding: 46px 44px;
+  padding: 46px 0;
   position: absolute;
   bottom: 0;
   width: 100%;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
 }
-section.hero h1 {
-  font-family: "Lora", Georgia, serif;
-  font-weight: 600;
+section.hero .hero-copy h1 {
   letter-spacing: -0.02em;
-  font-size: 54px;
-  line-height: 1.05;
-  margin: 0 0 14px;
+  margin-bottom: 14px;
   color: white;
   text-shadow: 5px 5px 5px black;
 }
-section.hero p {
-  margin: 0 0 22px;
+section.hero .hero-copy p {
+  margin-bottom: 22px;
   font-size: 18px;
   line-height: 1.6;
   color: white;
-  /* max-width: 36ch; */
   text-shadow: 2px 2px 2px black;
 }
-section.hero div#hero-cta {
+section.hero .hero-copy div#hero-cta {
   display: flex;
   flex-wrap: wrap;
 }
-section.hero div#hero-cta .provider-link {
+section.hero .hero-copy div#hero-cta .provider-link {
   margin-top: 14px;
   font-size: 14px;
   color: white;
@@ -316,7 +321,7 @@ section.hero div#hero-cta .provider-link {
   display: inline;
   margin-left: 1em;
 }
-section.hero div#hero-cta .provider-link a {
+section.hero .hero-copy div#hero-cta .provider-link a {
   color: #f4db78;
   text-decoration: none;
   font-weight: 700;
@@ -326,16 +331,14 @@ section.hero div#hero-cta .provider-link a {
 }
 section.hero .hero-image {
   height: 600px;
-  background: url(pexels-olly-3768114.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
 }
 
 main.site-main {
-  padding-top: 46px;
-  padding-bottom: 46px;
-  flex: 1;
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 body.home main.site-main {
@@ -399,6 +402,7 @@ footer .copyright {
   }
   footer .footer-left {
     text-align: left;
+    max-width: 40em;
   }
   footer nav.footer-links ul {
     margin: 0;
@@ -414,31 +418,6 @@ footer .copyright {
 }
 
 /* Responsive */
-@media (max-width: 980px) {
-  .hero-card {
-    grid-template-columns: 1fr;
-  }
-  .hero-image {
-    min-height: 280px;
-    order: -1;
-  }
-  .hero-copy {
-    padding: 34px 22px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
-  }
-  .hero h1 {
-    font-size: 44px;
-  }
-  .steps {
-    grid-template-columns: 1fr;
-  }
-  .copyright {
-    text-align: left;
-  }
-}
 @media (max-width: 420px) {
   .brand-name .bottom {
     font-size: 20px;

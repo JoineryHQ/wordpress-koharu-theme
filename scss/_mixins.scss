@@ -1,4 +1,6 @@
 /* _mixins.scss */
+
+// bootstrap-style "larger than"
 @mixin respond($size) {
   $value: map-get($breakpoints, $size);
 
@@ -10,6 +12,8 @@
     @error "Unknown breakpoint: #{$size}";
   }
 }
+
+// alternative "smaller than"
 @mixin respond-max($size) {
   $value: map-get($breakpoints, $size);
 

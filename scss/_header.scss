@@ -2,10 +2,8 @@
 
 header {
   padding: 18px 0;
-  border-bottom: 1px solid rgba(31,44,44,0.10);
   background: $bg;
   top: 0;
-  z-index: 5;
 
   nav.site-nav {
     display: none;
@@ -27,67 +25,78 @@ header {
       height: 46px;
       object-fit: contain;
     }
-  }
-  .brand-name{
-    line-height: 1.05;
-  }
-  .brand-name .top{
-    font-family: $font-family-serif;
-    font-size: 18px;
-    opacity: 0.85;
-  }
-  .brand-name .bottom{
-    font-family: $font-family-serif;
-    font-size: 24px;
-    font-weight: 600;
-    margin-top: 2px;
+    .brand-name{
+      line-height: 1.05;
+    }
+    .brand-name .top{
+      font-family: $font-family-serif;
+      font-size: 18px;
+      opacity: 0.85;
+    }
+    .brand-name .bottom{
+      font-family: $font-family-serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin-top: 2px;
+    }
   }
 
   .header-actions{
     display: flex;
     align-items: center;
     gap: 18px;
-  }
-  .icon-link{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    color: $pine-blue;
-  }
-  .icon{
-    width: 18px;
-    height: 18px;
-    display: inline-block;
-  }
-  .hamburger{
-    width: 22px;
-    height: 14px;
-    position: relative;
-  }
-  .hamburger span{
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: $pine-blue;
-    border-radius: $radius-pill;
-  }
-  .hamburger span:nth-child(1){
-    top: 0;
-  }
-  .hamburger span:nth-child(2){
-    top: 6px;
-  }
-  .hamburger span:nth-child(3){
-    top: 12px;
-  }
+    a.search-link{
+      display: none;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      color: $pine-blue;
+      .search-icon{
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+      }
+    }
+    .hamburger{
+      width: 22px;
+      height: 14px;
+      position: relative;
 
+      span{
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: $pine-blue;
+        border-radius: $radius-pill;
+      }
+      span:nth-child(1){
+        top: 0;
+      }
+      span:nth-child(2){
+        top: 6px;
+      }
+      span:nth-child(3){
+        top: 12px;
+      }
+    }
+  }
+}
+
+@include respond(sm) {
+  header {
+    .header-actions{
+      a.search-link{
+        display: inline-flex;
+      }
+    }
+  }
 }
 
 @include respond(md) {
   header {
-    position: sticky;    
+    position: sticky;
+    z-index: 5;
   }
 }

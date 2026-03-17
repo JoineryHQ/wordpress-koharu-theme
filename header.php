@@ -34,9 +34,9 @@ use Koharu_Mods as KM;
         </a>
 
         <div class="header-actions">
-          <a class="icon-link" href="<?= KM::getMod('koharu_header_search_url') ?>" aria-label="Search">
+          <a class="search-link" href="<?= KM::getMod('koharu_header_search_url') ?>" aria-label="Search">
             <!-- magnifier -->
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle>
             <path d="M20 20l-3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
             </svg>
@@ -44,7 +44,7 @@ use Koharu_Mods as KM;
           </a>
 
           <?php if (has_nav_menu('primary')) : ?>
-          <a class="icon-link" href="#" aria-label="Menu">
+          <a class="menu-link" href="#" aria-label="Menu">
             <div class="hamburger" aria-hidden="true">
               <span></span><span></span><span></span>
             </div>
