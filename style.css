@@ -197,9 +197,6 @@ header {
   background: #f8f4ec;
   top: 0;
 }
-header nav.site-nav {
-  display: none;
-}
 header .header-row {
   display: flex;
   align-items: center;
@@ -235,6 +232,7 @@ header .header-actions {
   display: flex;
   align-items: center;
   gap: 18px;
+  position: relative;
 }
 header .header-actions a.search-link {
   display: none;
@@ -249,12 +247,12 @@ header .header-actions a.search-link .search-icon {
   height: 18px;
   display: inline-block;
 }
-header .header-actions .hamburger {
+header .header-actions .site-nav-hamburger {
   width: 22px;
   height: 14px;
   position: relative;
 }
-header .header-actions .hamburger span {
+header .header-actions .site-nav-hamburger span {
   position: absolute;
   left: 0;
   right: 0;
@@ -262,14 +260,64 @@ header .header-actions .hamburger span {
   background: #4f6e6e;
   border-radius: 999px;
 }
-header .header-actions .hamburger span:nth-child(1) {
+header .header-actions .site-nav-hamburger span:nth-child(1) {
   top: 0;
 }
-header .header-actions .hamburger span:nth-child(2) {
+header .header-actions .site-nav-hamburger span:nth-child(2) {
   top: 6px;
 }
-header .header-actions .hamburger span:nth-child(3) {
+header .header-actions .site-nav-hamburger span:nth-child(3) {
   top: 12px;
+}
+header .header-actions nav.site-nav {
+  display: none;
+  position: absolute;
+  top: -1em;
+  right: -1em;
+  background: #2F3A3A;
+  padding: 1em;
+  border-left: 4px solid #f4db78;
+  box-shadow: 8px 8px 20px 0px #1f2c2c;
+  z-index: 1000;
+}
+header .header-actions nav.site-nav * {
+  color: #f8f4ec;
+}
+header .header-actions nav.site-nav svg#site-nav-close {
+  position: absolute;
+  right: 0;
+  margin-right: 1em;
+  border: 1px solid transparent;
+  padding: 0.25em;
+  border-radius: 0.25em;
+}
+header .header-actions nav.site-nav svg#site-nav-close:hover {
+  cursor: pointer;
+  border-color: #f8f4ec;
+  padding: 0.124em;
+}
+header .header-actions nav.site-nav ul {
+  list-style-type: none;
+  padding: 0;
+  min-width: 18em;
+  margin-top: 2em;
+}
+header .header-actions nav.site-nav ul li.current-menu-item {
+  /*border-left: 3px solid $muted-teal;*/
+}
+header .header-actions nav.site-nav ul li.current-menu-item a {
+  color: #f4db78;
+  font-weight: 600;
+  pointer-events: none;
+}
+header .header-actions nav.site-nav ul li a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+}
+header .header-actions nav.site-nav ul li a:hover {
+  background: #f8f4ec;
+  color: #2F3A3A;
 }
 
 @media (min-width: 576px) {

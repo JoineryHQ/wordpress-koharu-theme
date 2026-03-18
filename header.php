@@ -44,12 +44,15 @@ use Koharu_Mods as KM;
           </a>
 
           <?php if (has_nav_menu('primary')) : ?>
-          <a class="menu-link" href="#" aria-label="Menu">
-            <div class="hamburger" aria-hidden="true">
+            <div class="site-nav-hamburger" aria-hidden="true" aria-label="Menu">
               <span></span><span></span><span></span>
             </div>
-          </a>
           <nav class="site-nav" aria-label="<?php esc_attr_e('Primary Navigation', 'koharu-theme'); ?>">
+              <svg id="site-nav-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                <line x1="5" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="19" y1="5" x2="5" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            
               <?php
               wp_nav_menu([
                   'theme_location' => 'primary',

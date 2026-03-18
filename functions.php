@@ -33,6 +33,12 @@ function _koharu_theme_enqueue_assets() {
     [],
     wp_get_theme()->get('Version')
   );
+  wp_enqueue_script(
+    'koharu-theme-script',
+    get_stylesheet_directory_uri() . '/js/actions.js',
+    ['jquery'],
+    wp_get_theme()->get('Version')
+  );
 }
 add_action('wp_enqueue_scripts', '_koharu_theme_enqueue_assets');
 

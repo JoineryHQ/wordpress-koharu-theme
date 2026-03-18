@@ -5,10 +5,6 @@ header {
   background: $bg;
   top: 0;
 
-  nav.site-nav {
-    display: none;
-  }
-
   .header-row{
     display: flex;
     align-items: center;
@@ -45,6 +41,7 @@ header {
     display: flex;
     align-items: center;
     gap: 18px;
+    position: relative;
     a.search-link{
       display: none;
       align-items: center;
@@ -58,11 +55,10 @@ header {
         display: inline-block;
       }
     }
-    .hamburger{
+    .site-nav-hamburger{
       width: 22px;
       height: 14px;
       position: relative;
-
       span{
         position: absolute;
         left: 0;
@@ -79,6 +75,58 @@ header {
       }
       span:nth-child(3){
         top: 12px;
+      }
+    }
+    nav.site-nav {
+      display: none;
+      position: absolute;
+      top: -1em;
+      right: -1em;
+      background: $dark-charcoal;
+      padding: 1em;
+      border-left: 4px solid $jasmine;
+      box-shadow: 8px 8px 20px 0px $jet-black;
+      z-index: 1000;
+      * {
+        color: $old-lace;
+      }
+      svg#site-nav-close {
+        position: absolute;
+        right: 0;
+        margin-right: 1em;
+        border: 1px solid transparent;
+        padding: .25em;
+        border-radius: .25em;
+        &:hover {
+          cursor: pointer;
+          border-color: $old-lace;
+          padding: .124em;
+        }
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        min-width: 18em;
+        margin-top: 2em;
+        li.current-menu-item {
+          /*border-left: 3px solid $muted-teal;*/
+          a {
+            color: $jasmine;
+            font-weight: 600;
+            pointer-events: none;
+          }
+        }
+        li {
+          a {
+            display: block;
+            padding: 1em;
+            text-decoration: none;
+            &:hover {
+              background: $old-lace;
+              color: $dark-charcoal;
+            }
+          }
+        }
       }
     }
   }
