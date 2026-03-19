@@ -5,6 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 require_once get_template_directory() . '/inc/class-koharu-mods.php';
+require_once get_template_directory() . '/inc/class-koharu-pagemeta.php';
 
 function _koharu_theme_setup() {
   add_theme_support('title-tag');
@@ -75,9 +76,16 @@ add_filter('tiny_mce_before_init', 'koharu_tinymce_formats');
  * Registers an editor stylesheet for the theme.
  */
 function _koharu_add_editor_styles() {
-    add_editor_style( 'style.css' );
+    add_editor_style( 'editor-style.css' );
 }
 add_action( 'admin_init', '_koharu_add_editor_styles' );
 
 
+// Add theme-level custom modifications/settings.
 add_action('customize_register', 'Koharu_Mods::registerMods');
+
+
+// Add page-level meta options container.
+add_action('add_meta_boxes', 'Koharu_Pagemeta::register');
+// Define and register callback to save page meta options.
+add_action('save_post', 'Koharu_Pagemeta::save');

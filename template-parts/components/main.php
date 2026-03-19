@@ -2,6 +2,9 @@
 if (!defined('ABSPATH')) {
     exit;
 }
+
+use Koharu_Pagemeta as KP;
+
 ?>
 
 <!-- start koharu_theme_get_main -->
@@ -12,9 +15,14 @@ if (have_posts()) {
     the_post();
     ?>
     <article <?php post_class('page-layout'); ?>>
-      <?php if (!is_front_page()) : ?>
-        <h1><?php the_title(); ?></h1> 
-      <?php endif; ?>
+      <?php 
+        if (!is_front_page()) {
+          $hide_title = KP::getPostOption(get_the_ID(), 'koharu_hide_title');
+          if (!$hide_title) {
+            echo '<h1>' . esc_html(get_the_title()) . '</h1>';
+          }
+        }
+      ?>
       <div>
         <?php the_content(); ?>
       </div>

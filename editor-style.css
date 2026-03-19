@@ -1,0 +1,194 @@
+/*
+Theme Name: Koharu NM Theme
+Theme URI: https://example.com/
+Author: OpenAI
+Author URI: https://openai.com/
+Description: Minimal custom starter theme for the Registry site.
+Version: 0.1.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+Text Domain: koharu-theme
+*/
+/* _variables.scss */
+/* page background */
+/* primary brand */
+/* secondary / UI */
+/* accent */
+/* CTA / alerts */
+/* highlight / callout */
+/* footer / deep anchors */
+/* footer / deep anchors */
+/* body text */
+/* _mixins.scss */
+/* _typography.scss */
+* {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #1f2c2c;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Lora", Georgia, serif;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 54px;
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: 34px;
+  color: #4f6e6e;
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 1.45;
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+}
+
+p {
+  line-height: 1.8;
+  font-size: 1.2em;
+}
+
+/* theme-elements.scss */
+blockquote {
+  border-left: 3px solid #4f6e6e;
+  padding-left: 1em;
+}
+
+hr {
+  width: 160px;
+  margin: 60px auto;
+  opacity: 0.9;
+  border-top: 3px solid #c72c30;
+  border-radius: 999px;
+}
+
+ul.checkbox-list {
+  display: grid;
+  gap: 14px;
+  justify-content: center;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 0 10px;
+}
+ul.checkbox-list li {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 12px;
+  align-items: start;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.55;
+  color: rgba(31, 44, 44, 0.85);
+}
+ul.checkbox-list li::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
+  line-height: 0;
+  height: 15px;
+  width: 15px;
+  padding: 5px;
+  border-radius: 7px;
+  background: #8fa98f;
+}
+
+ol.action-card-list {
+  display: grid;
+  gap: 18px;
+  margin: 0 auto 2em;
+  counter-reset: item;
+  padding: 0;
+}
+ol.action-card-list li {
+  list-style-type: none;
+  display: grid;
+  align-items: center;
+  text-align: left;
+  grid-template-columns: 54px 1fr;
+  gap: 14px;
+  padding: 1em;
+  padding-right: 3em;
+  border-radius: 16px;
+  background: #f4db78;
+  font-weight: 600;
+}
+ol.action-card-list li::before {
+  content: counter(item) " ";
+  counter-increment: item;
+  font-family: "Lora", Georgia, serif;
+  color: #4f6e6e;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+
+a.button-cta-red,
+a.button-cta-cyan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 2px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
+  user-select: none;
+  box-shadow: 0 8px 18px rgba(143, 143, 143, 0.5);
+  color: #fff;
+  text-shadow: 2px 2px black;
+}
+
+a.button-cta-red {
+  background: #c72c30;
+}
+
+a.button-cta-cyan {
+  background: #1e8f8d;
+}
+
+a.shadow-cyan,
+.shadow-cyan {
+  box-shadow: 0 8px 18px rgba(30, 143, 141, 0.18);
+}
+
+@media (min-width: 768px) {
+  ol.action-card-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/*@import "_alignment";*/
+main.site-main {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+body.home main.site-main {
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  .brand-name .bottom {
+    font-size: 20px;
+  }
+  .icon-link span.icon-link-label {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=editor-style.css.map */
