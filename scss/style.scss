@@ -3,7 +3,7 @@
 Theme Name: Koharu NM Theme
 Author: Allen Shaw
 Author URI: https://joineryhq.com/
-Description: Minimal custom starter theme for the New Mexico Respite Care Provider Registry site <a href="example.com">a</a>.
+Description: Minimal custom starter theme for the New Mexico Respite Care Provider Registry site.  <a href="/koharu-style-guide/">Style Guide</a>.
 Version: 0.1.0
 Requires at least: 6.0
 Tested up to: 6.8
@@ -25,6 +25,7 @@ Text Domain: koharu-theme
 @import "_main";
 @import "_footer";
 @import "_lightbox";
+@import "_root";
 
 
 *{

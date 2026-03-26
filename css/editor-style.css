@@ -133,7 +133,9 @@ ol.action-card-list li::before {
 }
 
 a.button-cta-red,
-a.button-cta-cyan {
+a.button-cta-cyan,
+a.button-cta-jasmine,
+a.button-cta-transparent {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -156,6 +158,21 @@ a.button-cta-red {
 
 a.button-cta-cyan {
   background: #1e8f8d;
+}
+
+a.button-cta-jasmine {
+  background: #f4db78;
+  color: #1f2c2c;
+  text-shadow: none;
+  font-weight: 600;
+}
+
+a.button-cta-transparent {
+  background: #f8f4ec;
+  color: #4f6e6e;
+  text-shadow: none;
+  font-weight: 600;
+  border-color: #4f6e6e;
 }
 
 a.shadow-cyan,

@@ -28,5 +28,15 @@ $dark-charcoal:   #2F3A3A;  /* footer / deep anchors */
 $jet-black:   #1f2c2c;  /* footer / deep anchors */
 $text:        #1f2c2c;  /* body text */
 
+// Light colors:
+$old-lace-light: lighten($old-lace, 3%);
+$dark-cyan-light: lighten($dark-cyan, 50%);
+$pine-blue-light: lighten($pine-blue, 40%);
+$muted-teal-light: lighten($muted-teal, 20%);
+$flag-red-light: lighten($flag-red, 45%);
+$jasmine-light: lighten($jasmine, 20%);
+$dark-charcoal-light: lighten($dark-charcoal, 70%);
+$jet-black-light: lighten($jet-black, 70%);
+
 // Roles
 $bg: $old-lace;

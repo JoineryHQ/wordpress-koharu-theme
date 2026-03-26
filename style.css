@@ -2,7 +2,7 @@
 Theme Name: Koharu NM Theme
 Author: Allen Shaw
 Author URI: https://joineryhq.com/
-Description: Minimal custom starter theme for the New Mexico Respite Care Provider Registry site <a href="example.com">a</a>.
+Description: Minimal custom starter theme for the New Mexico Respite Care Provider Registry site.  <a href="/koharu-style-guide/">Style Guide</a>.
 Version: 0.1.0
 Requires at least: 6.0
 Tested up to: 6.8
@@ -132,7 +132,9 @@ ol.action-card-list li::before {
 }
 
 a.button-cta-red,
-a.button-cta-cyan {
+a.button-cta-cyan,
+a.button-cta-jasmine,
+a.button-cta-transparent {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -155,6 +157,21 @@ a.button-cta-red {
 
 a.button-cta-cyan {
   background: #1e8f8d;
+}
+
+a.button-cta-jasmine {
+  background: #f4db78;
+  color: #1f2c2c;
+  text-shadow: none;
+  font-weight: 600;
+}
+
+a.button-cta-transparent {
+  background: #f8f4ec;
+  color: #4f6e6e;
+  text-shadow: none;
+  font-weight: 600;
+  border-color: #4f6e6e;
 }
 
 a.shadow-cyan,
@@ -583,6 +600,26 @@ body.koharu-is-lightbox header,
 body.koharu-is-lightbox footer,
 body.koharu-is-lightbox div#wpadminbar {
   display: none;
+}
+
+/* _root.scss */
+:root {
+  --koharu-color-old-lace: #f8f4ec;
+  --koharu-color-dark-cyan: #1e8f8d;
+  --koharu-color-pine-blue: #4f6e6e;
+  --koharu-color-muted-teal: #8fa98f;
+  --koharu-color-flag-red: #c72c30;
+  --koharu-color-jasmine: #f4db78;
+  --koharu-color-dark-charcoal: #2F3A3A;
+  --koharu-color-jet-black: #1f2c2c;
+  --koharu-color-old-lace-light: rgb(252.1192307692, 250.4730769231, 247.1807692308);
+  --koharu-color-dark-cyan-light: rgb(187.2196531792, 240.7803468208, 239.8323699422);
+  --koharu-color-pine-blue-light: rgb(186.9047619048, 206.0952380952, 206.0952380952);
+  --koharu-color-muted-teal-light: rgb(200.696969697, 213.303030303, 200.696969697);
+  --koharu-color-flag-red-light: rgb(248.2098765432, 224.2901234568, 224.9074074074);
+  --koharu-color-jasmine-light: rgb(251.6849315068, 244.1506849315, 214.3150684932);
+  --koharu-color-dark-charcoal-light: rgb(228.4857142857, 233.5142857143, 233.5142857143);
+  --koharu-color-jet-black-light: rgb(209.24, 222.76, 222.76);
 }
 
 * {

@@ -75,7 +75,9 @@ ol.action-card-list {
 }
 
 a.button-cta-red,
-a.button-cta-cyan {
+a.button-cta-cyan,
+a.button-cta-jasmine,
+a.button-cta-transparent {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -102,6 +104,21 @@ a.button-cta-red {
 a.button-cta-cyan {
   // specific for cyan:
   background: $dark-cyan;
+}
+a.button-cta-jasmine {
+  // specific for jasmine:
+  background: $jasmine;
+  color: $jet-black;
+  text-shadow: none;
+  font-weight: 600;
+}
+a.button-cta-transparent {
+  // specific for jasmine:
+  background: $old-lace;
+  color: $pine-blue;
+  text-shadow: none;
+  font-weight: 600;
+  border-color: $pine-blue;
 }
 
 a.shadow-cyan,

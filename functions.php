@@ -66,6 +66,16 @@ function koharu_tinymce_formats($init) {
       'selector' => 'a',
       'classes' => 'button-cta-cyan'
     ],
+    [
+      'title' => 'CTA Button Jasmine',
+      'selector' => 'a',
+      'classes' => 'button-cta-jasmine'
+    ],
+    [
+      'title' => 'CTA Button Transparent',
+      'selector' => 'a',
+      'classes' => 'button-cta-transparent'
+    ],
   ];
   $init['style_formats'] = wp_json_encode($style_formats);
   $init['toolbar2'] .= ",styleselect";
@@ -121,6 +131,30 @@ add_filter('body_class', function($classes) {
   // If page is viewed in a lightbox (per url query params), append a class to body
   if (!empty($_GET['lightbox']) && is_singular()) {
     $classes[] = 'koharu-is-lightbox';
-  }
+  }  
   return $classes;
+});
+
+/**
+ * Spedify a route and route handler for theme style guide
+ */
+add_action('template_include', function($template) {
+  if (get_query_var('koharu_style_guide')) {
+    return get_template_directory() . '/template-parts/style-guide.php';
+  }
+  return $template;
+});
+add_action('init', function() {
+  add_rewrite_rule(
+    '^koharu-style-guide/?$',
+    'index.php?koharu_style_guide=1',
+    'top'
+  );
+});
+add_filter('query_vars', function($vars) {
+  $vars[] = 'koharu_style_guide';
+  return $vars;
+});
+add_action('after_switch_theme', function() {
+  flush_rewrite_rules();
 });
