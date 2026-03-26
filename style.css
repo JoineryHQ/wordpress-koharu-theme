@@ -49,7 +49,7 @@ h3 {
 }
 
 a {
-  color: inherit;
+  color: #1e8f8d;
 }
 
 p {
@@ -602,6 +602,29 @@ body.koharu-is-lightbox div#wpadminbar {
   display: none;
 }
 
+/** _wpbb.scss
+ * Override style definitions for 'wp profile builder' plugin.
+ */
+body .wppb-error,
+body .wppb-warning,
+body .wppb-notice,
+body .wppb-success,
+body .wppb-error {
+  border-width: 0;
+  border-left-width: 4px;
+  padding: 1em;
+}
+body .wppb-error a,
+body .wppb-warning a,
+body .wppb-notice a,
+body .wppb-success a,
+body .wppb-error a {
+  color: #1e8f8d !important;
+}
+body .wppb-warning {
+  background: rgb(248.2098765432, 224.2901234568, 224.9074074074);
+  border-left-color: #c72c30;
+}
 /* _root.scss */
 :root {
   --koharu-color-old-lace: #f8f4ec;
@@ -615,7 +638,7 @@ body.koharu-is-lightbox div#wpadminbar {
   --koharu-color-old-lace-light: rgb(252.1192307692, 250.4730769231, 247.1807692308);
   --koharu-color-dark-cyan-light: rgb(187.2196531792, 240.7803468208, 239.8323699422);
   --koharu-color-pine-blue-light: rgb(186.9047619048, 206.0952380952, 206.0952380952);
-  --koharu-color-muted-teal-light: rgb(200.696969697, 213.303030303, 200.696969697);
+  --koharu-color-muted-teal-light: rgb(229.5454545455, 235.4545454545, 229.5454545455);
   --koharu-color-flag-red-light: rgb(248.2098765432, 224.2901234568, 224.9074074074);
   --koharu-color-jasmine-light: rgb(251.6849315068, 244.1506849315, 214.3150684932);
   --koharu-color-dark-charcoal-light: rgb(228.4857142857, 233.5142857143, 233.5142857143);

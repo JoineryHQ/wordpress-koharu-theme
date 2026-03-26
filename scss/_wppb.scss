@@ -1,0 +1,29 @@
+/** _wpbb.scss
+ * Override style definitions for 'wp profile builder' plugin.
+ */
+
+// wrap in body for increased specificity.
+body {
+  .wppb-error,
+  .wppb-warning,
+  .wppb-notice,
+  .wppb-success,
+  .wppb-error {
+    border-width: 0;
+    border-left-width: 4px;
+    padding: 1em;
+    a {
+      // !important because wppb said so.
+      color: $dark-cyan !important;
+    }
+  }
+  .wppb-warning {
+    background: $flag-red-light;
+    border-left-color: $flag-red;
+  }
+  .wppb-notice {
+  }
+  .wppb-success {
+    // Tried to do one of our theme greens, but they're not "success-looking" enough.
+  }
+}
