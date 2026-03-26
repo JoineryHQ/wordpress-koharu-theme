@@ -390,6 +390,37 @@ section.hero .hero-image {
   position: relative;
 }
 
+.section-menu-container ul.section-menu {
+  list-style-type: none;
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  /*    float: right; */
+  padding: 0;
+  margin: 0;
+}
+.section-menu-container ul.section-menu li {
+  /*      margin-bottom: .5em;
+        margin-left: 2em;*/
+}
+.section-menu-container ul.section-menu li a {
+  background-color: rgba(244, 219, 120, 0.5);
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  border-radius: 0.5em;
+  font-size: 1.1em;
+}
+.section-menu-container ul.section-menu li a:hover {
+  color: #f4db78;
+  background-color: #2F3A3A;
+}
+.section-menu-container ul.section-menu li.current-menu-item a {
+  font-weight: 600;
+  background-color: #f4db78;
+  pointer-events: none;
+}
+
 main.site-main {
   padding-top: 3em;
   padding-bottom: 3em;

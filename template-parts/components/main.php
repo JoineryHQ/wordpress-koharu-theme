@@ -5,11 +5,23 @@ if (!defined('ABSPATH')) {
 
 use Koharu_Pagemeta as KP;
 
+$sectionMenuId = Koharu_Utils_Page::getSectionMenu(get_the_ID());
+
 ?>
 
 <!-- start koharu_theme_get_main -->
-<main class="site-main">
-<?php
+<main class="site-main">  
+          <div class="section-menu-container">
+          <?php
+            if ($sectionMenuId) {
+              wp_nav_menu([
+                'menu' => $sectionMenuId,
+                'menu_class' => 'section-menu'
+              ]);
+            }
+            ?>
+          </div>
+          <?php          
 if (have_posts()) {
   while (have_posts()) {
     the_post();

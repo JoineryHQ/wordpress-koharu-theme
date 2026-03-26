@@ -21,8 +21,15 @@ final class Koharu_Pagemeta {
     // "Site Header" items
     'koharu_hide_title' => [
       'metaBoxKey' => 'koharu_page_options',
-      'type' => 'checkbox',
       'label' => 'Hide page title',
+      'type' => 'checkbox',
+    ],
+    // "Site Header" items
+    'koharu_section_menu' => [
+      'metaBoxKey' => 'koharu_page_options',
+      'label' => 'Section Menu for Display',
+      'type' => 'select',
+      'optionsCallback' => 'getOptionsSectionMenu',
     ],
   ];
 
@@ -38,14 +45,28 @@ final class Koharu_Pagemeta {
       $metaBoxKey = $metaOption['metaBoxKey'];
       wp_nonce_field($metaBoxKey . '_nonce', $metaBoxKey . '_nonce');
 
-      echo "<label>";
+      echo "<p>";
+      echo "<label class=\"koharu_page_options-label-{$metaOption['type']}\">{$metaOption['label']}</label>";
+
       switch ($metaOption['type']) {
         case 'checkbox':
           echo "<input type=\"checkbox\" name=\"{$metaOptionId}\" value=\"1\"" . checked($value, '1', false) . ">";
-          echo $metaOption['label'];
+          
+          break;
+        case 'select':
+          echo "<select name=\"{$metaOptionId}\">";
+          if (is_callable(['self', $metaOption['optionsCallback']])) {
+            $optionsCallback = $metaOption['optionsCallback'];
+            $options = self::$optionsCallback();
+          }
+          foreach ($options as $optionValue => $optionLabel) {
+            echo "<option value=\"{$optionValue}\"" . selected($value, $optionValue, false) . ">" . esc_html($optionLabel) . "</option>";
+          }            
+          echo "</select>";
           break;
       }
-      echo "</label>";
+      echo "</p>";
+      
     }
   }
 
@@ -64,6 +85,9 @@ final class Koharu_Pagemeta {
       switch ($metaOption['type']) {
         case 'checkbox':
           $value = isset($_POST[$metaOptionId]) ? '1' : '';
+          break;
+        case 'select':
+          $value = $_POST[$metaOptionId];
           break;
         default:
           error_log("Koharu: invalid metaOption type '" . (string) $metaOption['type'] . "' when saving post $post_id.");
@@ -84,4 +108,14 @@ final class Koharu_Pagemeta {
     }
   }
 
+  private static function getOptionsSectionMenu() {
+    $ret = [
+      '' => '- (Inherit from parent, if any) -',
+    ];
+    $menus = wp_get_nav_menus();
+    foreach ($menus as $menu) {
+      $ret[$menu->term_id] = $menu->name;
+    }
+    return $ret;
+  }
 }
