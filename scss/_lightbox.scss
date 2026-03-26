@@ -1,0 +1,10 @@
+/* _lightbox.scss
+ * Expected to be defined last (or nearly last), to override other styles.
+ */
+body.koharu-is-lightbox {
+  header,
+  footer {
+    display: none;
+  }
+  background: white;
+}

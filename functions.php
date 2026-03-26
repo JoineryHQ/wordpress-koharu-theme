@@ -91,6 +91,7 @@ add_action('add_meta_boxes', 'Koharu_Pagemeta::register');
 // Define and register callback to save page meta options.
 add_action('save_post', 'Koharu_Pagemeta::save');
 
+// queue styles for admin (so our metabox fields look nice.
 function _koharu_admin_styles($hook) {
   if (!in_array($hook, ['post.php', 'post-new.php'])) {
     return;
@@ -104,3 +105,22 @@ function _koharu_admin_styles($hook) {
   );
 }
 add_action('admin_enqueue_scripts', '_koharu_admin_styles');
+
+add_filter('the_content', function ($content) {
+  if (!empty($_GET['lightbox']) && !($_GET['lightbox-nolink'] ?? false) && is_singular()) {
+    // If page is viewed in a lightbox (per url query params), append a break-out link,
+    // as long as we're not explicitly told to omit it (per query params)
+    $title = get_the_title();
+    $url   = esc_url(remove_query_arg('lightbox'));
+    $content .= '<p class="lightbox-full-link"><a class="button-cta-cyan" target="_top" href="' . $url . '">View full page: ' . esc_html($title) . '</a></p>';
+  }
+  return $content;
+});
+
+add_filter('body_class', function($classes) {
+  // If page is viewed in a lightbox (per url query params), append a class to body
+  if (!empty($_GET['lightbox']) && is_singular()) {
+    $classes[] = 'koharu-is-lightbox';
+  }
+  return $classes;
+});

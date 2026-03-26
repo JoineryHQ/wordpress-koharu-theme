@@ -574,6 +574,17 @@ footer .copyright {
     text-align: right;
   }
 }
+/* _lightbox.scss
+ * Expected to be defined last (or nearly last), to override other styles.
+ */
+body.koharu-is-lightbox {
+  background: white;
+}
+body.koharu-is-lightbox header,
+body.koharu-is-lightbox footer {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
 }
