@@ -111,7 +111,7 @@ a.shadow-cyan,
 }
 
 
-@include respond(md) {
+@include media-min(md) {
   ol.action-card-list {
     grid-template-columns: repeat(3, 1fr);
   }

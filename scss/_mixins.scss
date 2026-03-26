@@ -1,7 +1,7 @@
 /* _mixins.scss */
 
 // bootstrap-style "larger than"
-@mixin respond($size) {
+@mixin media-min($size) {
   $value: map-get($breakpoints, $size);
 
   @if $value {
@@ -14,7 +14,7 @@
 }
 
 // alternative "smaller than"
-@mixin respond-max($size) {
+@mixin media-max($size) {
   $value: map-get($breakpoints, $size);
 
   @if $value {

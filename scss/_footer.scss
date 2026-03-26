@@ -56,7 +56,7 @@ footer{
   }
 }
 
-@include respond(md) {
+@include media-min(md) {
   footer{
     .footer-row{
       grid-template-columns: auto 24em;

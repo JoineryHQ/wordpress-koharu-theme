@@ -1,0 +1,157 @@
+/* _site-nav.scss */
+
+.site-nav-hamburger-wrapper {
+  padding: 5px;
+  &:hover {
+  .site-nav-hamburger {
+      span{
+        background: $dark-cyan;
+      }
+    }
+  }
+  .site-nav-hamburger {
+    width: 22px;
+    height: 14px;
+    position: relative;
+    span{
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: $pine-blue;
+      border-radius: $radius-pill;
+    }
+    span:nth-child(1){
+      top: 0;
+    }
+    span:nth-child(2){
+      top: 6px;
+    }
+    span:nth-child(3){
+      top: 12px;
+    }
+  }
+}
+
+nav.site-nav {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  background: $dark-charcoal;
+  padding: 10px;
+  border-left: 4px solid $jasmine;
+  box-shadow: 8px 8px 20px 0px $jet-black;
+  z-index: 1000;
+  * {
+    color: $old-lace;
+  }
+  svg#site-nav-close {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    border: 1px solid transparent;
+    padding: .25em;
+    border-radius: .25em;
+    &:hover {
+      cursor: pointer;
+      border-color: $old-lace;
+      padding: .124em;
+    }
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    min-width: 18em;
+    margin-top: 2em;
+    li.current-menu-item {
+      /*border-left: 3px solid $muted-teal;*/
+      a {
+        color: $jasmine;
+        font-weight: 600;
+        pointer-events: none;
+      }
+    }
+    li {
+      a {
+        display: block;
+        padding: 1em;
+        text-decoration: none;
+        &:hover {
+          background: $old-lace;
+          color: $dark-charcoal;
+        }
+      }
+    }
+  }
+}
+
+/* home page places .site-nav differently in dom, so we need different
+ * positioning rules.
+ */
+body.home {
+  nav.site-nav {
+    top: -10px;
+    right: -6px;
+  }
+}
+
+/* Styles for site-nav on narrow display, non-home pages. */
+body:not(.home) {
+  @include media-min(sm) {
+    .site-nav-hamburger{
+      display: none;
+    }
+    nav.site-nav {
+      // !important: even after jquery().hide(), we want to show this in wide viewports.
+      display: block !important;
+      background: $dark-charcoal;
+      * {
+        color: $old-lace;
+      }
+      svg#site-nav-close {
+        display: none;
+      }
+      ul {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        list-style-type: none;
+        padding: 0;
+        min-width: 18em;
+        margin-top: 2em;
+        li.current-menu-item {
+          /*border-left: 3px solid $muted-teal;*/
+          a {
+            color: $jasmine;
+            font-weight: 600;
+            pointer-events: none;
+          }
+        }
+        li {
+          a {
+            display: block;
+            padding: 1em;
+            text-decoration: none;
+            margin: .25em;
+            &:hover {
+              background: $old-lace;
+              color: $dark-charcoal;
+            }
+          }
+        }
+      }
+
+      // reset styles defined for home/narrow:
+      box-shadow: none;
+      position: relative;
+      top: 0;
+      right: 0;
+      padding: 0;
+      border-left: none;
+      z-index: revert;
+
+    }
+
+  }
+}

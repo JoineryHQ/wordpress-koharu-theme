@@ -5,6 +5,32 @@ if (!defined('ABSPATH')) {
 
 use Koharu_Mods as KM;
 
+if (has_nav_menu('primary')) {
+  $nav_menu = wp_nav_menu([
+      'theme_location' => 'primary',
+      'container'      => false,
+      'fallback_cb'    => false,
+      'echo' => false,
+  ]);
+  $nav_menu_primary = '
+    <nav class="site-nav" aria-label="Primary Navigation">
+        <svg id="site-nav-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <line x1="5" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="19" y1="5" x2="5" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      <div class="site-nav-container">
+      ' . $nav_menu . '
+      </div>
+    </nav>
+  ';
+}
+
+if ($dirh) {
+    while (($dirElement = readdir($dirh)) !== false) {
+        
+    }
+    closedir($dirh);
+}
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -43,27 +69,28 @@ use Koharu_Mods as KM;
             <span class="icon-link-label">Search</span>
           </a>
 
-          <?php if (has_nav_menu('primary')) : ?>
+          <div class="site-nav-hamburger-wrapper">
             <div class="site-nav-hamburger" aria-hidden="true" aria-label="Menu">
               <span></span><span></span><span></span>
-            </div>
-          <nav class="site-nav" aria-label="<?php esc_attr_e('Primary Navigation', 'koharu-theme'); ?>">
-              <svg id="site-nav-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-                <line x1="5" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <line x1="19" y1="5" x2="5" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            
-              <?php
-              wp_nav_menu([
-                  'theme_location' => 'primary',
-                  'container'      => false,
-                  'fallback_cb'    => false,
-              ]);
-              ?>
-          </nav>
-          <?php endif; ?>
-          
+            </div>          
+          </div>
+          <?php
+            if (is_front_page()) {
+              // home page has hamburger regardless of viewport width, so for proper
+              // positioning, we need this div adjacent to hamburger.
+              echo $nav_menu_primary;
+            }
+          ?>
         </div>
       </div>
     </div>
+    <?php
+      if (!is_front_page()) {
+        // non-home pages have hamburger only on narrow viewports, where positioning
+        // is more predictable; on wide viewports, they show the full menu as a
+        // bar, and it must be placed here for proper positioning.
+        echo $nav_menu_primary;
+      }
+    ?>
+
   </header>
