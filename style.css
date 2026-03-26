@@ -1,9 +1,8 @@
 /*
 Theme Name: Koharu NM Theme
-Theme URI: https://example.com/
-Author: OpenAI
-Author URI: https://openai.com/
-Description: Minimal custom starter theme for the Registry site.
+Author: Allen Shaw
+Author URI: https://joineryhq.com/
+Description: Minimal custom starter theme for the New Mexico Respite Care Provider Registry site <a href="example.com">a</a>.
 Version: 0.1.0
 Requires at least: 6.0
 Tested up to: 6.8
@@ -55,7 +54,7 @@ a {
 
 p {
   line-height: 1.8;
-  font-size: 1.2em;
+  /*font-size: 1.2em;*/
 }
 
 /* theme-elements.scss */
@@ -581,7 +580,8 @@ body.koharu-is-lightbox {
   background: white;
 }
 body.koharu-is-lightbox header,
-body.koharu-is-lightbox footer {
+body.koharu-is-lightbox footer,
+body.koharu-is-lightbox div#wpadminbar {
   display: none;
 }
 

@@ -3,7 +3,8 @@
  */
 body.koharu-is-lightbox {
   header,
-  footer {
+  footer,
+  div#wpadminbar {
     display: none;
   }
   background: white;
