@@ -3,6 +3,7 @@
 // wrap in body for increased specificity.
 body {
   .crm-container {
+    // status messages
     .messages {
       border-width: 0;
       border-left-width: 4px;
@@ -13,22 +14,103 @@ body {
       background-color: $jasmine-light;
       border-color: $jasmine;
     }
-    a, a:link, a:visited {    
+
+    // links
+    a, a:link, a:visited {
       color: $dark-cyan;
     }
+
+    // buttons
+    a.button,
+    a.button:link,
+      a.crm-pager-link.action-item,
+      button.crm-button {
+      // Most buttons look like a.button-cta-transparent
+      @include button-cta-base;
+      @include button-cta-transparent;
+      i.crm-i {
+        margin-right: .5em;
+      }
+      &:hover {
+        background-color: $jasmine;
+        border-color: $jet-black;
+        color: $jet-black;
+      }
+    }
+    a.button.cancel {
+      // Cancel button looks flatter.
+      border-color: $pine-blue-light;
+      box-shadow: none;
+    }
+
+
+    // profile search criteria form
+    form.CRM_Profile_Form_Search {
+      div.crm-form-block {
+        background: none;
+        details.crm-accordion-light {
+          summary {
+            background: $jasmine-light;
+            border-left: 4px solid $jasmine;
+            padding: 1em;
+          }
+          div.crm-accordion-body {
+            background: $old-lace-light;
+            border-left: 4px solid $jasmine;
+            padding: 2em;
+            table {
+              tr {
+                border-top: 1em solid transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // profile search results
+    div.crm-search-results {
+      .crm-pager {
+        height: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        .element-right {
+          margin-right: 0;
+          margin-left: 1em;
+          margin-bottom: 0;
+          white-space: nowrap;
+        }
+        .crm-pager-nav {
+          margin: 0;
+          a {
+            margin-top: 1em;
+            margin-bottom: 1em;
+          }
+        }
+      }
+      /**
+       * registry profile layout is card-based, per nmregistry extension.
+       * here we set colors per this theme.
+       * Note: as written this block will treat search results in all profiles,
+       * even though we only intend it to treat registry search profile. If other
+       * search profiles become available under this theme, we should consider
+       * narrowing the scope of these selectors.
+       */
+      tbody tr.even-row,
+      tbody tr.odd-row {
+        background-color: $old-lace-light;
+        border: 4px solid transparent;
+        border-radius: 0 1em 1em 0;
+        &:hover {
+          background-color: $jasmine-light;
+          border-left-color: $jasmine;
+        }
+      }
+
+    }
+
+
   }
-  
-  .crm-container a.button,
-  .crm-container a.button:link,
-  .crm-container button.crm-button {
-    // Most buttons look like a.button-cta-transparent
-    @include button-cta-base;
-    @include button-cta-transparent;
-  }
-  .crm-container a.button.cancel {
-    // Cancel button looks flatter.
-    border-color: $pine-blue-light;
-    box-shadow: none;
-  }
-  
 }

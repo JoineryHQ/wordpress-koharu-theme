@@ -623,6 +623,7 @@ body .crm-container a, body .crm-container a:link, body .crm-container a:visited
 }
 body .crm-container a.button,
 body .crm-container a.button:link,
+body .crm-container a.crm-pager-link.action-item,
 body .crm-container button.crm-button {
   display: inline-flex;
   align-items: center;
@@ -644,9 +645,80 @@ body .crm-container button.crm-button {
   font-weight: 600;
   border-color: #4f6e6e;
 }
+body .crm-container a.button i.crm-i,
+body .crm-container a.button:link i.crm-i,
+body .crm-container a.crm-pager-link.action-item i.crm-i,
+body .crm-container button.crm-button i.crm-i {
+  margin-right: 0.5em;
+}
+body .crm-container a.button:hover,
+body .crm-container a.button:link:hover,
+body .crm-container a.crm-pager-link.action-item:hover,
+body .crm-container button.crm-button:hover {
+  background-color: #f4db78;
+  border-color: #1f2c2c;
+  color: #1f2c2c;
+}
 body .crm-container a.button.cancel {
   border-color: rgb(186.9047619048, 206.0952380952, 206.0952380952);
   box-shadow: none;
+}
+body .crm-container form.CRM_Profile_Form_Search div.crm-form-block {
+  background: none;
+}
+body .crm-container form.CRM_Profile_Form_Search div.crm-form-block details.crm-accordion-light summary {
+  background: rgb(251.6849315068, 244.1506849315, 214.3150684932);
+  border-left: 4px solid #f4db78;
+  padding: 1em;
+}
+body .crm-container form.CRM_Profile_Form_Search div.crm-form-block details.crm-accordion-light div.crm-accordion-body {
+  background: rgb(252.1192307692, 250.4730769231, 247.1807692308);
+  border-left: 4px solid #f4db78;
+  padding: 2em;
+}
+body .crm-container form.CRM_Profile_Form_Search div.crm-form-block details.crm-accordion-light div.crm-accordion-body table tr {
+  border-top: 1em solid transparent;
+}
+body .crm-container div.crm-search-results {
+  /**
+   * registry profile layout is card-based, per nmregistry extension.
+   * here we set colors per this theme.
+   * Note: as written this block will treat search results in all profiles,
+   * even though we only intend it to treat registry search profile. If other
+   * search profiles become available under this theme, we should consider
+   * narrowing the scope of these selectors.
+   */
+}
+body .crm-container div.crm-search-results .crm-pager {
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+body .crm-container div.crm-search-results .crm-pager .element-right {
+  margin-right: 0;
+  margin-left: 1em;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+body .crm-container div.crm-search-results .crm-pager .crm-pager-nav {
+  margin: 0;
+}
+body .crm-container div.crm-search-results .crm-pager .crm-pager-nav a {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+body .crm-container div.crm-search-results tbody tr.even-row,
+body .crm-container div.crm-search-results tbody tr.odd-row {
+  background-color: rgb(252.1192307692, 250.4730769231, 247.1807692308);
+  border: 4px solid transparent;
+  border-radius: 0 1em 1em 0;
+}
+body .crm-container div.crm-search-results tbody tr.even-row:hover,
+body .crm-container div.crm-search-results tbody tr.odd-row:hover {
+  background-color: rgb(251.6849315068, 244.1506849315, 214.3150684932);
+  border-left-color: #f4db78;
 }
 
 /* _root.scss */
