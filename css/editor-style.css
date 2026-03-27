@@ -17,6 +17,7 @@ Text Domain: koharu-theme
 /* accent */
 /* CTA / alerts */
 /* highlight / callout */
+/* 'success' status messages */
 /* footer / deep anchors */
 /* footer / deep anchors */
 /* body text */
@@ -51,6 +52,10 @@ h3 {
 
 a {
   color: #4f6e6e;
+}
+
+code {
+  font-family: monospace;
 }
 
 p {
@@ -180,6 +185,31 @@ a.button-cta-transparent {
 a.shadow-cyan,
 .shadow-cyan {
   box-shadow: 0 8px 18px rgba(30, 143, 141, 0.18);
+}
+
+.koharu-status {
+  border-width: 0;
+  border-left-width: 4px;
+  border-left-style: solid;
+  padding: 1em;
+  margin: 0 auto 25px;
+  font-size: 1em;
+}
+.koharu-status a, .koharu-status a:link, .koharu-status a:visited {
+  color: #4f6e6e;
+  text-decoration: underline;
+}
+.koharu-status.koharu-status-success {
+  background-color: rgb(223.0861244019, 240.9138755981, 223.0861244019);
+  border-color: #409140;
+}
+.koharu-status.koharu-status-warning {
+  background-color: rgb(251.6849315068, 244.1506849315, 214.3150684932);
+  border-color: #f4db78;
+}
+.koharu-status.koharu-status-error {
+  background-color: rgb(248.2098765432, 224.2901234568, 224.9074074074);
+  border-color: #c72c30;
 }
 
 @media (min-width: 768px) {

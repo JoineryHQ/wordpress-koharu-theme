@@ -108,6 +108,32 @@ a.shadow-cyan,
   box-shadow: 0 8px 18px rgba(30,143,141,0.18);
 }
 
+.koharu-status {
+    border-width: 0;
+    border-left-width: 4px;
+    border-left-style: solid;
+    padding: 1em;
+    margin: 0 auto 25px;
+    font-size: 1em;
+    a, a:link, a:visited {
+      color: $pine-blue;
+      text-decoration: underline;
+    }
+  
+  &.koharu-status-success {
+        background-color: $success-green-light;
+        border-color: $success-green;
+  }
+  &.koharu-status-warning {
+        background-color: $jasmine-light;
+        border-color: $jasmine;
+  }
+  &.koharu-status-error {
+        background-color: $flag-red-light;
+        border-color: $flag-red;
+  }
+}
+
 @include media-min(md) {
   ol.action-card-list {
     grid-template-columns: repeat(3, 1fr);

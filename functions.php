@@ -136,10 +136,19 @@ add_filter('body_class', function($classes) {
 });
 
 /**
- * Spedify a route and route handler for theme style guide
+ * Specify a route and route handler for theme style guide
  */
 add_action('template_include', function($template) {
   if (get_query_var('koharu_style_guide')) {
+    if (function_exists('civicrm_initialize')) {
+      // We want civcirm styles on the koharu style guide (for 'Status message' styling, etc.)
+      wp_enqueue_style(
+        'koharu-civicrm-style',
+        \Civi::settings()->get('userFrameworkResourceURL') . '/css/civicrm.css',
+        [],
+        wp_get_theme()->get('Version')
+      );
+    }
     return get_template_directory() . '/template-parts/style-guide.php';
   }
   return $template;

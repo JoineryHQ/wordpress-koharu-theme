@@ -7,12 +7,27 @@ body {
     .messages {
       border-width: 0;
       border-left-width: 4px;
+      border-left-style: solid;
+      border-radius: 0 !important; /* civicrm's specificity is complex */
       padding: 1em;
       margin: 0 auto 25px;
-    }
-    .status {
-      background-color: $jasmine-light;
-      border-color: $jasmine;
+      font-size: 1em;
+      &.status {
+        background-color: $jasmine-light;
+        border-color: $jasmine;
+      }
+      &.help {
+        background-color: $success-green-light;
+        border-color: $success-green;
+      }
+      &.crm-error {
+        background-color: $flag-red-light;
+        border-color: $flag-red;
+      }
+      a, a:link, a:visited {
+        color: $pine-blue;
+        text-decoration: underline;
+      }
     }
 
     // links

@@ -15,7 +15,7 @@ body {
     margin: 0 auto 25px;
     a {
       // !important because wppb said so.
-      color: $dark-cyan !important;
+      color: $pine-blue !important;
     }
   }
   .wppb-warning {
@@ -26,5 +26,7 @@ body {
   }
   .wppb-success {
     // Tried to do one of our theme greens, but they're not "success-looking" enough.
+    background: $success-green-light;
+    border-left-color: $success-green;
   }
 }

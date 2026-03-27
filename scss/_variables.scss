@@ -24,6 +24,7 @@ $pine-blue:   #4f6e6e;  /* secondary / UI */
 $muted-teal:  #8fa98f;  /* accent */
 $flag-red:    #c72c30;  /* CTA / alerts */
 $jasmine:     #f4db78;  /* highlight / callout */
+$success-green: #409140; /* 'success' status messages */
 $dark-charcoal:   #2F3A3A;  /* footer / deep anchors */
 $jet-black:   #1f2c2c;  /* footer / deep anchors */
 $text:        #1f2c2c;  /* body text */
@@ -35,6 +36,7 @@ $pine-blue-light: lighten($pine-blue, 40%);
 $muted-teal-light: lighten($muted-teal, 30%);
 $flag-red-light: lighten($flag-red, 45%);
 $jasmine-light: lighten($jasmine, 20%);
+$success-green-light: lighten($success-green, 50%);
 $dark-charcoal-light: lighten($dark-charcoal, 70%);
 $jet-black-light: lighten($jet-black, 70%);
 

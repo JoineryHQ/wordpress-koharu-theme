@@ -41,6 +41,10 @@
         <p class="name">Jasmine</p>
       </div>
       <div class="swatch">
+        <div class="dot" style="background: var(--koharu-color-success-green)"></div>
+        <p class="name">Success Green</p>
+      </div>
+      <div class="swatch">
         <div class="dot" style="background: var(--koharu-color-old-lace)"></div>
         <p class="name">Old Lace</p>
       </div>
@@ -77,6 +81,10 @@
         <p class="name">Jasmine Light</p>
       </div>
       <div class="swatch">
+        <div class="dot" style="background: var(--koharu-color-success-green-light)"></div>
+        <p class="name">Success Green Light</p>
+      </div>
+      <div class="swatch">
         <div class="dot" style="background: var(--koharu-color-old-lace-light)"></div>
         <p class="name">Old Lace Light</p>
       </div>
@@ -94,6 +102,29 @@
         <p class="name">Jet Black Light</p>
       </div>
     </div>
+
+    <h2>Status messages:</h2>
+    <?php
+      $statusTypes = [
+        ['element' => 'p', 'label' => 'Koharu Theme "Success"', 'code' => 'class="koharu-status koharu-status-success"'],
+        ['element' => 'p', 'label' => 'Koharu Theme "Warning"', 'code' => 'class="koharu-status koharu-status-warning"'],
+        ['element' => 'p', 'label' => 'Koharu Theme "Error"', 'code' => 'class="koharu-status koharu-status-error"'],
+        ['element' => 'p', 'label' => 'WP Profile builder "Success"', 'code' => 'class="wppb-success"'],
+        ['element' => 'p', 'label' => 'WP Profile builder "Notice"', 'code' => 'class="wppb-notice"'],
+        ['element' => 'p', 'label' => 'WP Profile builder "Warning"', 'code' => 'class="wppb-warning"'],
+        ['element' => 'div', 'label' => 'CiviCRM "Help"', 'code' => 'class="messages help"', 'type' => 'civicrm'],
+        ['element' => 'div', 'label' => 'CiviCRM "Status"', 'code' => 'class="messages status"', 'type' => 'civicrm'],
+        ['element' => 'div', 'label' => 'CiviCRM "Error"', 'code' => 'class="messages crm-error"', 'type' => 'civicrm'],
+      ];
+      foreach ($statusTypes as $statusType) {
+        $code = htmlspecialchars("<{$statusType['element']} {$statusType['code']}</{$statusType['element']}>");
+        $statusHtml = "<p {$statusType['code']}>{$statusType['label']} ( <code>{$code}</code> ) <a href=\"#\">Example link</a></p>";
+        if (($statusType['type'] ?? '') == 'civicrm') {
+          $statusHtml = "<div class=\"crm-container\">$statusHtml</div>";
+        }
+        echo $statusHtml;
+      }
+    ?>
     <h2>Heading Styles</h2>
     <h1>Heading 1</h1>
     <h2>Heading 2</h2>
@@ -102,6 +133,7 @@
     <h5>Heading 5</h5>
     <h6>Heading 6</h6>
     <h2>Special Styles</h2>
+    <p>These special styles are visible (and selectable) in the WordPress native content editor:</p>
     <h3>Checkbox lists:</h3>
     <ul class="checkbox-list">
       <li>Bullet list as checkboxes</li>
@@ -118,17 +150,16 @@
     <hr />
 
     <h3>Button styles:</h3>
-    Buttons are simply links with the appropriate format selection:
+    <p>Buttons are simply links with the appropriate format selection:</p>
     <p>
-    <a class="button-cta-red" href="https://example.com">"CTA Button Red"</a>
+    <a class="button-cta-red" href="#">"CTA Button Red"</a>
     </p><p>
-    <a class="button-cta-cyan" href="https://example.com">"CTA Button Cyan"</a>
+    <a class="button-cta-cyan" href="#">"CTA Button Cyan"</a>
     </p><p>
-    <a class="button-cta-jasmine" href="https://example.com">"CTA Button Jasmine"</a>
+    <a class="button-cta-jasmine" href="#">"CTA Button Jasmine"</a>
     </p><p>
-    <a class="button-cta-transparent" href="https://example.com">"CTA Button Light"</a>
+    <a class="button-cta-transparent" href="#">"CTA Button Light"</a>
     </p>
-    &nbsp;
   </div>
 </main>
 <?php get_footer(); ?>

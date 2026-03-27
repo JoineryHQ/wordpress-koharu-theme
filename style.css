@@ -16,6 +16,7 @@ Text Domain: koharu-theme
 /* accent */
 /* CTA / alerts */
 /* highlight / callout */
+/* 'success' status messages */
 /* footer / deep anchors */
 /* footer / deep anchors */
 /* body text */
@@ -50,6 +51,10 @@ h3 {
 
 a {
   color: #4f6e6e;
+}
+
+code {
+  font-family: monospace;
 }
 
 p {
@@ -179,6 +184,31 @@ a.button-cta-transparent {
 a.shadow-cyan,
 .shadow-cyan {
   box-shadow: 0 8px 18px rgba(30, 143, 141, 0.18);
+}
+
+.koharu-status {
+  border-width: 0;
+  border-left-width: 4px;
+  border-left-style: solid;
+  padding: 1em;
+  margin: 0 auto 25px;
+  font-size: 1em;
+}
+.koharu-status a, .koharu-status a:link, .koharu-status a:visited {
+  color: #4f6e6e;
+  text-decoration: underline;
+}
+.koharu-status.koharu-status-success {
+  background-color: rgb(223.0861244019, 240.9138755981, 223.0861244019);
+  border-color: #409140;
+}
+.koharu-status.koharu-status-warning {
+  background-color: rgb(251.6849315068, 244.1506849315, 214.3150684932);
+  border-color: #f4db78;
+}
+.koharu-status.koharu-status-error {
+  background-color: rgb(248.2098765432, 224.2901234568, 224.9074074074);
+  border-color: #c72c30;
 }
 
 @media (min-width: 768px) {
@@ -601,22 +631,42 @@ body .wppb-warning a,
 body .wppb-notice a,
 body .wppb-success a,
 body .wppb-error a {
-  color: #1e8f8d !important;
+  color: #4f6e6e !important;
 }
 body .wppb-warning {
   background: rgb(248.2098765432, 224.2901234568, 224.9074074074);
   border-left-color: #c72c30;
 }
+body .wppb-success {
+  background: rgb(223.0861244019, 240.9138755981, 223.0861244019);
+  border-left-color: #409140;
+}
+
 /* _civicrm.scss */
 body .crm-container .messages {
   border-width: 0;
   border-left-width: 4px;
+  border-left-style: solid;
+  border-radius: 0 !important; /* civicrm's specificity is complex */
   padding: 1em;
   margin: 0 auto 25px;
+  font-size: 1em;
 }
-body .crm-container .status {
+body .crm-container .messages.status {
   background-color: rgb(251.6849315068, 244.1506849315, 214.3150684932);
   border-color: #f4db78;
+}
+body .crm-container .messages.help {
+  background-color: rgb(223.0861244019, 240.9138755981, 223.0861244019);
+  border-color: #409140;
+}
+body .crm-container .messages.crm-error {
+  background-color: rgb(248.2098765432, 224.2901234568, 224.9074074074);
+  border-color: #c72c30;
+}
+body .crm-container .messages a, body .crm-container .messages a:link, body .crm-container .messages a:visited {
+  color: #4f6e6e;
+  text-decoration: underline;
 }
 body .crm-container a, body .crm-container a:link, body .crm-container a:visited {
   color: #1e8f8d;
@@ -729,6 +779,7 @@ body .crm-container div.crm-search-results tbody tr.odd-row:hover {
   --koharu-color-muted-teal: #8fa98f;
   --koharu-color-flag-red: #c72c30;
   --koharu-color-jasmine: #f4db78;
+  --koharu-color-success-green: #409140;
   --koharu-color-dark-charcoal: #2F3A3A;
   --koharu-color-jet-black: #1f2c2c;
   --koharu-color-old-lace-light: rgb(252.1192307692, 250.4730769231, 247.1807692308);
@@ -737,6 +788,7 @@ body .crm-container div.crm-search-results tbody tr.odd-row:hover {
   --koharu-color-muted-teal-light: rgb(229.5454545455, 235.4545454545, 229.5454545455);
   --koharu-color-flag-red-light: rgb(248.2098765432, 224.2901234568, 224.9074074074);
   --koharu-color-jasmine-light: rgb(251.6849315068, 244.1506849315, 214.3150684932);
+  --koharu-color-success-green-light: rgb(223.0861244019, 240.9138755981, 223.0861244019);
   --koharu-color-dark-charcoal-light: rgb(228.4857142857, 233.5142857143, 233.5142857143);
   --koharu-color-jet-black-light: rgb(209.24, 222.76, 222.76);
 }
