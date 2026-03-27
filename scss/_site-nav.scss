@@ -106,9 +106,6 @@ body:not(.home) {
       // !important: even after jquery().hide(), we want to show this in wide viewports.
       display: block !important;
       background: $dark-charcoal;
-      * {
-        color: $old-lace;
-      }
       svg#site-nav-close {
         display: none;
       }
@@ -116,28 +113,9 @@ body:not(.home) {
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
-        list-style-type: none;
-        padding: 0;
-        min-width: 18em;
-        margin-top: 2em;
-        li.current-menu-item {
-          /*border-left: 3px solid $muted-teal;*/
-          a {
-            color: $jasmine;
-            font-weight: 600;
-            pointer-events: none;
-          }
-        }
         li {
           a {
-            display: block;
-            padding: 1em;
-            text-decoration: none;
             margin: .25em;
-            &:hover {
-              background: $old-lace;
-              color: $dark-charcoal;
-            }
           }
         }
       }

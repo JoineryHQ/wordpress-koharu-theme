@@ -1,11 +1,3 @@
-@mixin alignment-container {
-  /*max-width: 1120px;*/
-  width: min(98vw, 1120px);
-  margin: 0 auto;
-  padding-left: 20px;  
-  padding-right: 20px;  
-}
-
 .container,
 main.site-main {
   @include alignment-container;

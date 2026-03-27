@@ -74,28 +74,12 @@ ol.action-card-list {
   }
 }
 
+input.submit,
 a.button-cta-red,
 a.button-cta-cyan,
 a.button-cta-jasmine,
 a.button-cta-transparent {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 22px;
-  border-radius: $radius-pill;
-  font-weight: 700;
-  border: 2px solid transparent;
-  text-decoration: none;
-  white-space: nowrap;
-  line-height: 1;
-  user-select: none;
-
-  // box shadow for light backgrounds:
-  box-shadow: 0 8px 18px rgba(143, 143, 143, 0.5);  
-  
-  // shadowed white text:
-  color: #fff;
-  text-shadow: 2px 2px black;
+  @include button-cta-base
 }
 a.button-cta-red {
   // specific for red:
@@ -112,21 +96,17 @@ a.button-cta-jasmine {
   text-shadow: none;
   font-weight: 600;
 }
+
+input.submit,
 a.button-cta-transparent {
-  // specific for jasmine:
-  background: $old-lace;
-  color: $pine-blue;
-  text-shadow: none;
-  font-weight: 600;
-  border-color: $pine-blue;
+  @include button-cta-transparent;
 }
 
 a.shadow-cyan,
 .shadow-cyan {
   // cyan shadow (for dark backgrounds)
-  box-shadow: 0 8px 18px rgba(30,143,141,0.18);  
+  box-shadow: 0 8px 18px rgba(30,143,141,0.18);
 }
-
 
 @include media-min(md) {
   ol.action-card-list {

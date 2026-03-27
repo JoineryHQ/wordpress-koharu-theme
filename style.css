@@ -49,7 +49,7 @@ h3 {
 }
 
 a {
-  color: #1e8f8d;
+  color: #4f6e6e;
 }
 
 p {
@@ -131,6 +131,7 @@ ol.action-card-list li::before {
   text-align: center;
 }
 
+input.submit,
 a.button-cta-red,
 a.button-cta-cyan,
 a.button-cta-jasmine,
@@ -166,6 +167,7 @@ a.button-cta-jasmine {
   font-weight: 600;
 }
 
+input.submit,
 a.button-cta-transparent {
   background: #f8f4ec;
   color: #4f6e6e;
@@ -399,9 +401,6 @@ body.home nav.site-nav {
     border-left: none;
     z-index: revert;
   }
-  body:not(.home) nav.site-nav * {
-    color: #f8f4ec;
-  }
   body:not(.home) nav.site-nav svg#site-nav-close {
     display: none;
   }
@@ -409,28 +408,9 @@ body.home nav.site-nav {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    list-style-type: none;
-    padding: 0;
-    min-width: 18em;
-    margin-top: 2em;
-  }
-  body:not(.home) nav.site-nav ul li.current-menu-item {
-    /*border-left: 3px solid $muted-teal;*/
-  }
-  body:not(.home) nav.site-nav ul li.current-menu-item a {
-    color: #f4db78;
-    font-weight: 600;
-    pointer-events: none;
   }
   body:not(.home) nav.site-nav ul li a {
-    display: block;
-    padding: 1em;
-    text-decoration: none;
     margin: 0.25em;
-  }
-  body:not(.home) nav.site-nav ul li a:hover {
-    background: #f8f4ec;
-    color: #2F3A3A;
   }
 }
 
@@ -497,6 +477,7 @@ section.hero .hero-image {
 }
 .section-menu-container ul.section-menu li a {
   background-color: rgba(244, 219, 120, 0.5);
+  color: #1f2c2c;
   display: block;
   padding: 1em;
   text-decoration: none;
@@ -613,6 +594,7 @@ body .wppb-error {
   border-width: 0;
   border-left-width: 4px;
   padding: 1em;
+  margin: 0 auto 25px;
 }
 body .wppb-error a,
 body .wppb-warning a,
@@ -625,6 +607,48 @@ body .wppb-warning {
   background: rgb(248.2098765432, 224.2901234568, 224.9074074074);
   border-left-color: #c72c30;
 }
+/* _civicrm.scss */
+body .crm-container .messages {
+  border-width: 0;
+  border-left-width: 4px;
+  padding: 1em;
+  margin: 0 auto 25px;
+}
+body .crm-container .status {
+  background-color: rgb(251.6849315068, 244.1506849315, 214.3150684932);
+  border-color: #f4db78;
+}
+body .crm-container a, body .crm-container a:link, body .crm-container a:visited {
+  color: #1e8f8d;
+}
+body .crm-container a.button,
+body .crm-container a.button:link,
+body .crm-container button.crm-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 2px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
+  user-select: none;
+  box-shadow: 0 8px 18px rgba(143, 143, 143, 0.5);
+  color: #fff;
+  text-shadow: 2px 2px black;
+  background: #f8f4ec;
+  color: #4f6e6e;
+  text-shadow: none;
+  font-weight: 600;
+  border-color: #4f6e6e;
+}
+body .crm-container a.button.cancel {
+  border-color: rgb(186.9047619048, 206.0952380952, 206.0952380952);
+  box-shadow: none;
+}
+
 /* _root.scss */
 :root {
   --koharu-color-old-lace: #f8f4ec;
