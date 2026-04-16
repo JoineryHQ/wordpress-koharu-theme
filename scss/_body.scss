@@ -11,6 +11,31 @@ body{
   main.site-main {
     flex: 1;
   }
+  
+  img.body-side-image {
+    display: block;
+    margin-bottom: 2rem;
+  }
+  
+  
+}
+
+@include media-min(md) {
+  body {
+    img.alignright {
+      float: right;
+      margin-left: 2rem;
+      margin-bottom: 2rem;
+    }
+    img.alignleft {
+      float: left;
+      margin-right: 2rem;
+      margin-bottom: 2rem;
+    }
+    img.body-side-image {
+      max-width: 75%;        
+    }
+  }
 }
 
 // WP adds padding when admin bar is shown, so we remove that.

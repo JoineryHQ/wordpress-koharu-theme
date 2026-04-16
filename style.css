@@ -246,7 +246,26 @@ body {
 body main.site-main {
   flex: 1;
 }
+body img.body-side-image {
+  display: block;
+  margin-bottom: 2rem;
+}
 
+@media (min-width: 768px) {
+  body img.alignright {
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+  body img.alignleft {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+  }
+  body img.body-side-image {
+    max-width: 75%;
+  }
+}
 body.admin-bar {
   min-height: calc(100vh - 32px);
 }

@@ -76,6 +76,11 @@ function koharu_tinymce_formats($init) {
       'selector' => 'a',
       'classes' => 'button-cta-transparent'
     ],
+    [
+      'title' => 'Body side image',
+      'selector' => 'img',
+      'classes' => 'body-side-image'
+    ],
   ];
   $init['style_formats'] = wp_json_encode($style_formats);
   $init['toolbar2'] .= ",styleselect";
