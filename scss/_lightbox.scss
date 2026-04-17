@@ -4,7 +4,8 @@
 body.koharu-is-lightbox {
   header,
   footer,
-  div#wpadminbar {
+  div#wpadminbar,
+  div.section-menu-container {
     display: none;
   }
   background: white;

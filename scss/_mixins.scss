@@ -38,7 +38,7 @@
 // - _civicrm.scss
 @mixin button-cta-transparent {
   // specific for transparent:
-  background: $old-lace;
+  background: inherit;
   color: $pine-blue;
   text-shadow: none;
   font-weight: 600;

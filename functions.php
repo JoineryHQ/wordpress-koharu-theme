@@ -127,7 +127,7 @@ add_filter('the_content', function ($content) {
     // as long as we're not explicitly told to omit it (per query params)
     $title = get_the_title();
     $url   = esc_url(remove_query_arg('lightbox'));
-    $content .= '<p class="lightbox-full-link"><a class="button-cta-cyan" target="_top" href="' . $url . '">View full page: ' . esc_html($title) . '</a></p>';
+    $content .= '<p class="lightbox-full-link"><a class="button-cta-transparent" target="_top" href="' . $url . '">View full page: ' . esc_html($title) . '</a></p>';
   }
   return $content;
 });

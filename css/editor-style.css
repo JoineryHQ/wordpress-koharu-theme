@@ -163,7 +163,7 @@ a.button-cta-jasmine {
 
 input.submit,
 a.button-cta-transparent {
-  background: #f8f4ec;
+  background: inherit;
   color: #4f6e6e;
   text-shadow: none;
   font-weight: 600;

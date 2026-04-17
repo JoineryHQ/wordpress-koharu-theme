@@ -174,7 +174,7 @@ a.button-cta-jasmine {
 
 input.submit,
 a.button-cta-transparent {
-  background: #f8f4ec;
+  background: inherit;
   color: #4f6e6e;
   text-shadow: none;
   font-weight: 600;
@@ -640,7 +640,8 @@ body.koharu-is-lightbox {
 }
 body.koharu-is-lightbox header,
 body.koharu-is-lightbox footer,
-body.koharu-is-lightbox div#wpadminbar {
+body.koharu-is-lightbox div#wpadminbar,
+body.koharu-is-lightbox div.section-menu-container {
   display: none;
 }
 
@@ -720,7 +721,7 @@ body .crm-container button.crm-button {
   box-shadow: 0 8px 18px rgba(143, 143, 143, 0.5);
   color: #fff;
   text-shadow: 2px 2px black;
-  background: #f8f4ec;
+  background: inherit;
   color: #4f6e6e;
   text-shadow: none;
   font-weight: 600;
