@@ -1,0 +1,31 @@
+article,
+body.wp-editor {
+
+  img.body-side-image {
+    display: block;
+    margin-bottom: 2rem;
+  }
+  @include media-min(md) {
+    img.alignright {
+      float: right;
+      margin-left: 2rem;
+      margin-bottom: 2rem;
+    }
+    img.alignleft {
+      float: left;
+      margin-right: 2rem;
+      margin-bottom: 2rem;
+    }
+    img.body-side-image {
+      max-width: 75%;
+    }
+  }
+
+  ul:not(.checkbox-list),
+  ol:not(.action-card-list) {
+    li {
+      margin-bottom: 1em;
+      line-height: 1.6em;
+    }
+  }  
+}

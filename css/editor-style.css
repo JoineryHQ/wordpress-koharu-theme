@@ -1,15 +1,3 @@
-/*
-Theme Name: Koharu NM Theme
-Theme URI: https://example.com/
-Author: OpenAI
-Author URI: https://openai.com/
-Description: Minimal custom starter theme for the Registry site.
-Version: 0.1.0
-Requires at least: 6.0
-Tested up to: 6.8
-Requires PHP: 7.4
-Text Domain: koharu-theme
-*/
 /* _variables.scss */
 /* page background */
 /* primary brand */
@@ -217,16 +205,38 @@ a.shadow-cyan,
     grid-template-columns: repeat(3, 1fr);
   }
 }
+article img.body-side-image,
+body.wp-editor img.body-side-image {
+  display: block;
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  article img.alignright,
+  body.wp-editor img.alignright {
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+  article img.alignleft,
+  body.wp-editor img.alignleft {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+  }
+  article img.body-side-image,
+  body.wp-editor img.body-side-image {
+    max-width: 75%;
+  }
+}
+article ul:not(.checkbox-list) li,
+article ol:not(.action-card-list) li,
+body.wp-editor ul:not(.checkbox-list) li,
+body.wp-editor ol:not(.action-card-list) li {
+  margin-bottom: 1em;
+  line-height: 1.6em;
+}
+
 /*@import "_alignment";*/
-main.site-main {
-  padding-bottom: 3em;
-}
-
-body.home main.site-main {
-  padding-top: 3em;
-  text-align: center;
-}
-
 * {
   box-sizing: border-box;
 }
