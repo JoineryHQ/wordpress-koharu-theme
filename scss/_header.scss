@@ -8,7 +8,7 @@ header {
 
   .header-row{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     gap: 16px;
   }
@@ -40,10 +40,24 @@ header {
 
   .header-actions{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    flex-direction: column;
     gap: 18px;
     position: relative;
     margin-top: 10px;
+    div.gtranslate_wrapper {
+      select.gt_selector {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: transparent;
+        padding: 0.5rem 1rem;
+
+        option {
+          text-align: right;
+        }
+      }
+    }
     a.search-link{
       display: none;
       align-items: center;
@@ -74,5 +88,16 @@ header {
   header {
     position: sticky;
     z-index: 5;
+    .header-actions {
+      align-items: center;
+      flex-direction: row;
+      div.gtranslate_wrapper {
+        select.gt_selector {
+          option {
+            text-align: center;
+          }
+        }
+      }
+    }
   }
 }

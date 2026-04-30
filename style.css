@@ -265,7 +265,7 @@ header {
 }
 header .header-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
 }
@@ -296,10 +296,21 @@ header a.brand .brand-name .bottom {
 }
 header .header-actions {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  flex-direction: column;
   gap: 18px;
   position: relative;
   margin-top: 10px;
+}
+header .header-actions div.gtranslate_wrapper select.gt_selector {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  padding: 0.5rem 1rem;
+}
+header .header-actions div.gtranslate_wrapper select.gt_selector option {
+  text-align: right;
 }
 header .header-actions a.search-link {
   display: none;
@@ -324,6 +335,13 @@ header .header-actions a.search-link .search-icon {
   header {
     position: sticky;
     z-index: 5;
+  }
+  header .header-actions {
+    align-items: center;
+    flex-direction: row;
+  }
+  header .header-actions div.gtranslate_wrapper select.gt_selector option {
+    text-align: center;
   }
 }
 /* _site-nav.scss */
@@ -417,7 +435,7 @@ body.home nav.site-nav {
 
 /* Styles for site-nav on narrow display, non-home pages. */
 @media (min-width: 576px) {
-  body:not(.home) .site-nav-hamburger {
+  body:not(.home) .site-nav-hamburger-wrapper {
     display: none;
   }
   body:not(.home) nav.site-nav {
@@ -823,6 +841,13 @@ body .crm-container div.crm-search-results tbody tr.odd-row:hover {
   --koharu-color-success-green-light: rgb(223.0861244019, 240.9138755981, 223.0861244019);
   --koharu-color-dark-charcoal-light: rgb(228.4857142857, 233.5142857143, 233.5142857143);
   --koharu-color-jet-black-light: rgb(209.24, 222.76, 222.76);
+}
+
+html.translated-ltr font,
+html.translated-rtl font {
+  all: unset;
+  color: inherit;
+  font: inherit;
 }
 
 * {

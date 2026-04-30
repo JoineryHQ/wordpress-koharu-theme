@@ -60,6 +60,7 @@ if ($dirh) {
         </a>
 
         <div class="header-actions">
+            <?php echo do_shortcode('[gtranslate]'); ?>
           <a class="search-link" href="<?= KM::getMod('koharu_header_search_url') ?>" aria-label="Search">
             <!-- magnifier -->
             <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">

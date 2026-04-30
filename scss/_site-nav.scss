@@ -99,7 +99,7 @@ body.home {
 /* Styles for site-nav on narrow display, non-home pages. */
 body:not(.home) {
   @include media-min(sm) {
-    .site-nav-hamburger{
+    .site-nav-hamburger-wrapper{
       display: none;
     }
     nav.site-nav {
