@@ -693,6 +693,11 @@ body .wppb-success {
 }
 
 /* _civicrm.scss */
+body .crm-container {
+  /**
+   * Select2 elements in forms
+   */
+}
 body .crm-container .messages {
   border-width: 0;
   border-left-width: 4px;
@@ -819,6 +824,9 @@ body .crm-container div.crm-search-results tbody tr.even-row:hover,
 body .crm-container div.crm-search-results tbody tr.odd-row:hover {
   background-color: rgb(251.6849315068, 244.1506849315, 214.3150684932);
   border-left-color: #f4db78;
+}
+body .crm-container ul.select2-results li.select2-result.select2-highlighted div.select2-result-label {
+  color: white;
 }
 
 /* _root.scss */

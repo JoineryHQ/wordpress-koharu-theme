@@ -126,6 +126,18 @@ body {
 
     }
 
+    /**
+     * Select2 elements in forms
+     */
+    ul.select2-results {
+      li.select2-result.select2-highlighted {
+        div.select2-result-label {
+          // li.select2 background is a darkish blue, so make this text color
+          // very light (white).
+          color: white;
+        }
+      }
+    }
 
   }
 }
