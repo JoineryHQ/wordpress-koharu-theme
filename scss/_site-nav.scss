@@ -64,7 +64,8 @@ nav.site-nav {
     padding: 0;
     min-width: 18em;
     margin-top: 2em;
-    li.current-menu-item {
+    li.current-menu-item,
+    li.current-page-ancestor {
       /*border-left: 3px solid $muted-teal;*/
       a {
         color: $jasmine;
