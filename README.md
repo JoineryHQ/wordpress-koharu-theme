@@ -10,3 +10,8 @@ This is intentionally minimal. Add templates and component files as the site gro
 - Hero image, hero title, and other elements editable through Appearance > Customize
 - Per-page meta options include "Hide Page Title", "Section Menu" selection 
   (with inheritance from parent page), etc.
+
+## Branches:
+- `master` provides a generic grayscale color theme, but retains notes on the 
+  original (branded) color scheme implemented for the first site that used this theme.
+- Other branches may exist for specific variations implemented on various sites.

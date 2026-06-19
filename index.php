@@ -4,5 +4,6 @@ if (!defined('ABSPATH')) {
 }
 
 get_header();
-koharu_theme_get_main();
+// fixme: this function does not exist. Why is it mentioend here? (commenting line until clarified.)
+//koharu_theme_get_main();
 get_footer();

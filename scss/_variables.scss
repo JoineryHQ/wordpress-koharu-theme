@@ -12,12 +12,16 @@ $breakpoints: (
 $font-family-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 $font-family-serif: "Lora", Georgia, serif;
 
+$font-family-sans: system-ui, sans-serif;
+$font-family-serif: Georgia, serif;
+
 // Layout
 $radius-pill: 999px;
 $shadow: 0 10px 28px rgba(31,44,44,0.10);
 $border: 1px solid rgba(31,44,44,0.12);
   
-// Colors:
+// The following are colors selected for the first site that used this theme.
+// Primary colors:
 $old-lace: #f8f4ec;  /* page background */
 $dark-cyan:   #1e8f8d;  /* primary brand */
 $pine-blue:   #4f6e6e;  /* secondary / UI */
@@ -28,7 +32,6 @@ $success-green: #409140; /* 'success' status messages */
 $dark-charcoal:   #2F3A3A;  /* footer / deep anchors */
 $jet-black:   #1f2c2c;  /* footer / deep anchors */
 $text:        #1f2c2c;  /* body text */
-
 // Light colors:
 $old-lace-light: lighten($old-lace, 3%);
 $dark-cyan-light: lighten($dark-cyan, 50%);
@@ -39,6 +42,19 @@ $jasmine-light: lighten($jasmine, 20%);
 $success-green-light: lighten($success-green, 50%);
 $dark-charcoal-light: lighten($dark-charcoal, 70%);
 $jet-black-light: lighten($jet-black, 70%);
+
+// Here we replace most of those colors with grayscale versions for a more
+// un-branded look on new prototype sites.
+// Primary colors - grayscale
+$old-lace:      #f5f5f5;
+$dark-cyan:     #666666;
+$pine-blue:     #555555;
+$muted-teal:    #999999;
+$flag-red:      #777777;
+$jasmine:       #bbbbbb;
+// Light colors - grayscale
+$jasmine-light:       #eee;
+$flag-red-light:      #e3e3e3;
 
 // Roles
 $bg: $old-lace;

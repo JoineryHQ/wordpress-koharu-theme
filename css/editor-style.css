@@ -9,15 +9,16 @@
 /* footer / deep anchors */
 /* footer / deep anchors */
 /* body text */
+/*$success-green-light: #cfcfcf;*/
 /* _mixins.scss */
 /* _typography.scss */
 * {
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: system-ui, sans-serif;
   color: #1f2c2c;
 }
 
 h1, h2, h3, h4 {
-  font-family: "Lora", Georgia, serif;
+  font-family: Georgia, serif;
   font-weight: 600;
 }
 
@@ -29,7 +30,7 @@ h1 {
 
 h2 {
   font-size: 34px;
-  color: #4f6e6e;
+  color: #555555;
 }
 
 h3 {
@@ -39,7 +40,7 @@ h3 {
 }
 
 a {
-  color: #4f6e6e;
+  color: #555555;
 }
 
 code {
@@ -57,7 +58,7 @@ p {
 
 /* theme-elements.scss */
 blockquote {
-  border-left: 3px solid #4f6e6e;
+  border-left: 3px solid #555555;
   padding-left: 1em;
 }
 
@@ -65,7 +66,7 @@ hr {
   width: 160px;
   margin: 60px auto;
   opacity: 0.9;
-  border-top: 3px solid #c72c30;
+  border-top: 3px solid #777777;
   border-radius: 999px;
 }
 
@@ -95,7 +96,7 @@ ul.checkbox-list li::before {
   width: 15px;
   padding: 5px;
   border-radius: 7px;
-  background: #8fa98f;
+  background: #999999;
 }
 
 ol.action-card-list {
@@ -115,14 +116,14 @@ ol.action-card-list li {
   padding: 1em;
   padding-right: 3em;
   border-radius: 16px;
-  background: #f4db78;
+  background: #bbbbbb;
   font-weight: 600;
 }
 ol.action-card-list li::before {
   content: counter(item) " ";
   counter-increment: item;
-  font-family: "Lora", Georgia, serif;
-  color: #4f6e6e;
+  font-family: Georgia, serif;
+  color: #555555;
   font-size: 44px;
   font-weight: 600;
   line-height: 1;
@@ -151,15 +152,15 @@ a.button-cta-transparent {
 }
 
 a.button-cta-red {
-  background: #c72c30;
+  background: #777777;
 }
 
 a.button-cta-cyan {
-  background: #1e8f8d;
+  background: #666666;
 }
 
 a.button-cta-jasmine {
-  background: #f4db78;
+  background: #bbbbbb;
   color: #1f2c2c;
   text-shadow: none;
   font-weight: 600;
@@ -168,10 +169,10 @@ a.button-cta-jasmine {
 input.submit,
 a.button-cta-transparent {
   background: inherit;
-  color: #4f6e6e;
+  color: #555555;
   text-shadow: none;
   font-weight: 600;
-  border-color: #4f6e6e;
+  border-color: #555555;
 }
 
 a.shadow-cyan,
@@ -188,7 +189,7 @@ a.shadow-cyan,
   font-size: 1em;
 }
 .koharu-status a, .koharu-status a:link, .koharu-status a:visited {
-  color: #4f6e6e;
+  color: #555555;
   text-decoration: underline;
 }
 .koharu-status.koharu-status-success {
@@ -196,12 +197,12 @@ a.shadow-cyan,
   border-color: #409140;
 }
 .koharu-status.koharu-status-warning {
-  background-color: rgb(251.6849315068, 244.1506849315, 214.3150684932);
-  border-color: #f4db78;
+  background-color: #eee;
+  border-color: #bbbbbb;
 }
 .koharu-status.koharu-status-error {
-  background-color: rgb(248.2098765432, 224.2901234568, 224.9074074074);
-  border-color: #c72c30;
+  background-color: #e3e3e3;
+  border-color: #777777;
 }
 
 @media (min-width: 768px) {

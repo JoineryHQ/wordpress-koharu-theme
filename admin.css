@@ -1,0 +1,10 @@
+div#koharu_page_options label {
+  display: block;
+  font-weight: 600;
+}
+div#koharu_page_options label.koharu_page_options-label-checkbox {
+  margin-right: 0.5em;
+  display: inline;
+}
+
+/*# sourceMappingURL=admin.css.map */
