@@ -1,6 +1,6 @@
-# Koharu NM: WordPress Theme
+# Koharu: WordPress Theme
 
-Custom theme designed for the New Mexico Respite Care Providers Registgry.
+Custom theme designed for Joinery registry sites.
 
 This is intentionally minimal. Add templates and component files as the site grows.
 
