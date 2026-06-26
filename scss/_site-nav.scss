@@ -64,15 +64,6 @@ nav.site-nav {
     padding: 0;
     min-width: 18em;
     margin-top: 2em;
-    li.current-menu-item,
-    li.current-page-ancestor {
-      /*border-left: 3px solid $muted-teal;*/
-      a {
-        color: $jasmine;
-        font-weight: 600;
-        pointer-events: none;
-      }
-    }
     li {
       a {
         display: block;
@@ -81,6 +72,20 @@ nav.site-nav {
         &:hover {
           background: $old-lace;
           color: $dark-charcoal;
+        }
+      }
+    }
+    li.current-menu-item,
+    li.current-page-ancestor {
+      /*border-left: 3px solid $muted-teal;*/
+      a {
+        color: $jasmine;
+        font-weight: 600;
+        cursor: pointer;
+        &:hover {
+          background: inherit;
+          color: inherit;
+          text-decoration: underline;
         }
       }
     }
