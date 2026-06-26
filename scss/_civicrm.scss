@@ -2,7 +2,9 @@
 
 // wrap in body for increased specificity.
 body {
-  .crm-container {
+  .crm-container,
+  // #bootstrap-theme required here for specificity/priority over civicrm's bootstrap styles.
+  .crm-container#bootstrap-theme {
     // status messages
     .messages {
       border-width: 0;
@@ -38,8 +40,9 @@ body {
     // buttons
     a.button,
     a.button:link,
-      a.crm-pager-link.action-item,
-      button.crm-button {
+    a.crm-pager-link.action-item,
+    button.crm-button,
+    button.af-button {
       // Most buttons look like a.button-cta-transparent
       @include button-cta-base;
       @include button-cta-transparent;
