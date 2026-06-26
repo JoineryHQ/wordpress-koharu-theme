@@ -20,7 +20,6 @@ Text Domain: koharu-theme
 /* footer / deep anchors */
 /* footer / deep anchors */
 /* body text */
-/*$success-green-light: #cfcfcf;*/
 /* _mixins.scss */
 /* _typography.scss */
 * {
@@ -412,16 +411,6 @@ nav.site-nav ul {
   min-width: 18em;
   margin-top: 2em;
 }
-nav.site-nav ul li.current-menu-item,
-nav.site-nav ul li.current-page-ancestor {
-  /*border-left: 3px solid $muted-teal;*/
-}
-nav.site-nav ul li.current-menu-item a,
-nav.site-nav ul li.current-page-ancestor a {
-  color: #bbbbbb;
-  font-weight: 600;
-  pointer-events: none;
-}
 nav.site-nav ul li a {
   display: block;
   padding: 1em;
@@ -430,6 +419,22 @@ nav.site-nav ul li a {
 nav.site-nav ul li a:hover {
   background: #f5f5f5;
   color: #2F3A3A;
+}
+nav.site-nav ul li.current-menu-item,
+nav.site-nav ul li.current-page-ancestor {
+  /*border-left: 3px solid $muted-teal;*/
+}
+nav.site-nav ul li.current-menu-item a,
+nav.site-nav ul li.current-page-ancestor a {
+  color: #bbbbbb;
+  font-weight: 600;
+  cursor: pointer;
+}
+nav.site-nav ul li.current-menu-item a:hover,
+nav.site-nav ul li.current-page-ancestor a:hover {
+  background: inherit;
+  color: inherit;
+  text-decoration: underline;
 }
 
 /* home page places .site-nav differently in dom, so we need different
@@ -700,12 +705,14 @@ body .wppb-success {
 }
 
 /* _civicrm.scss */
-body .crm-container {
+body .crm-container,
+body .crm-container#bootstrap-theme {
   /**
    * Select2 elements in forms
    */
 }
-body .crm-container .messages {
+body .crm-container .messages,
+body .crm-container#bootstrap-theme .messages {
   border-width: 0;
   border-left-width: 4px;
   border-left-style: solid;
@@ -714,29 +721,44 @@ body .crm-container .messages {
   margin: 0 auto 25px;
   font-size: 1em;
 }
-body .crm-container .messages.status {
+body .crm-container .messages.status,
+body .crm-container#bootstrap-theme .messages.status {
   background-color: #eee;
   border-color: #bbbbbb;
 }
-body .crm-container .messages.help {
+body .crm-container .messages.help,
+body .crm-container#bootstrap-theme .messages.help {
   background-color: rgb(223.0861244019, 240.9138755981, 223.0861244019);
   border-color: #409140;
 }
-body .crm-container .messages.crm-error {
+body .crm-container .messages.crm-error,
+body .crm-container#bootstrap-theme .messages.crm-error {
   background-color: #e3e3e3;
   border-color: #777777;
 }
-body .crm-container .messages a, body .crm-container .messages a:link, body .crm-container .messages a:visited {
+body .crm-container .messages a, body .crm-container .messages a:link, body .crm-container .messages a:visited,
+body .crm-container#bootstrap-theme .messages a,
+body .crm-container#bootstrap-theme .messages a:link,
+body .crm-container#bootstrap-theme .messages a:visited {
   color: #555555;
   text-decoration: underline;
 }
-body .crm-container a, body .crm-container a:link, body .crm-container a:visited {
+body .crm-container a, body .crm-container a:link, body .crm-container a:visited,
+body .crm-container#bootstrap-theme a,
+body .crm-container#bootstrap-theme a:link,
+body .crm-container#bootstrap-theme a:visited {
   color: #666666;
 }
 body .crm-container a.button,
 body .crm-container a.button:link,
 body .crm-container a.crm-pager-link.action-item,
-body .crm-container button.crm-button {
+body .crm-container button.crm-button,
+body .crm-container button.af-button,
+body .crm-container#bootstrap-theme a.button,
+body .crm-container#bootstrap-theme a.button:link,
+body .crm-container#bootstrap-theme a.crm-pager-link.action-item,
+body .crm-container#bootstrap-theme button.crm-button,
+body .crm-container#bootstrap-theme button.af-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -760,38 +782,56 @@ body .crm-container button.crm-button {
 body .crm-container a.button i.crm-i,
 body .crm-container a.button:link i.crm-i,
 body .crm-container a.crm-pager-link.action-item i.crm-i,
-body .crm-container button.crm-button i.crm-i {
+body .crm-container button.crm-button i.crm-i,
+body .crm-container button.af-button i.crm-i,
+body .crm-container#bootstrap-theme a.button i.crm-i,
+body .crm-container#bootstrap-theme a.button:link i.crm-i,
+body .crm-container#bootstrap-theme a.crm-pager-link.action-item i.crm-i,
+body .crm-container#bootstrap-theme button.crm-button i.crm-i,
+body .crm-container#bootstrap-theme button.af-button i.crm-i {
   margin-right: 0.5em;
 }
 body .crm-container a.button:hover,
 body .crm-container a.button:link:hover,
 body .crm-container a.crm-pager-link.action-item:hover,
-body .crm-container button.crm-button:hover {
+body .crm-container button.crm-button:hover,
+body .crm-container button.af-button:hover,
+body .crm-container#bootstrap-theme a.button:hover,
+body .crm-container#bootstrap-theme a.button:link:hover,
+body .crm-container#bootstrap-theme a.crm-pager-link.action-item:hover,
+body .crm-container#bootstrap-theme button.crm-button:hover,
+body .crm-container#bootstrap-theme button.af-button:hover {
   background-color: #bbbbbb;
   border-color: #1f2c2c;
   color: #1f2c2c;
 }
-body .crm-container a.button.cancel {
+body .crm-container a.button.cancel,
+body .crm-container#bootstrap-theme a.button.cancel {
   border-color: rgb(186.9047619048, 206.0952380952, 206.0952380952);
   box-shadow: none;
 }
-body .crm-container form.CRM_Profile_Form_Search div.crm-form-block {
+body .crm-container form.CRM_Profile_Form_Search div.crm-form-block,
+body .crm-container#bootstrap-theme form.CRM_Profile_Form_Search div.crm-form-block {
   background: none;
 }
-body .crm-container form.CRM_Profile_Form_Search div.crm-form-block details.crm-accordion-light summary {
+body .crm-container form.CRM_Profile_Form_Search div.crm-form-block details.crm-accordion-light summary,
+body .crm-container#bootstrap-theme form.CRM_Profile_Form_Search div.crm-form-block details.crm-accordion-light summary {
   background: #eee;
   border-left: 4px solid #bbbbbb;
   padding: 1em;
 }
-body .crm-container form.CRM_Profile_Form_Search div.crm-form-block details.crm-accordion-light div.crm-accordion-body {
+body .crm-container form.CRM_Profile_Form_Search div.crm-form-block details.crm-accordion-light div.crm-accordion-body,
+body .crm-container#bootstrap-theme form.CRM_Profile_Form_Search div.crm-form-block details.crm-accordion-light div.crm-accordion-body {
   background: rgb(252.1192307692, 250.4730769231, 247.1807692308);
   border-left: 4px solid #bbbbbb;
   padding: 2em;
 }
-body .crm-container form.CRM_Profile_Form_Search div.crm-form-block details.crm-accordion-light div.crm-accordion-body table tr {
+body .crm-container form.CRM_Profile_Form_Search div.crm-form-block details.crm-accordion-light div.crm-accordion-body table tr,
+body .crm-container#bootstrap-theme form.CRM_Profile_Form_Search div.crm-form-block details.crm-accordion-light div.crm-accordion-body table tr {
   border-top: 1em solid transparent;
 }
-body .crm-container div.crm-search-results {
+body .crm-container div.crm-search-results,
+body .crm-container#bootstrap-theme div.crm-search-results {
   /**
    * registry profile layout is card-based, per nmregistry extension.
    * here we set colors per this theme.
@@ -801,38 +841,47 @@ body .crm-container div.crm-search-results {
    * narrowing the scope of these selectors.
    */
 }
-body .crm-container div.crm-search-results .crm-pager {
+body .crm-container div.crm-search-results .crm-pager,
+body .crm-container#bootstrap-theme div.crm-search-results .crm-pager {
   height: auto;
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
   justify-content: space-between;
 }
-body .crm-container div.crm-search-results .crm-pager .element-right {
+body .crm-container div.crm-search-results .crm-pager .element-right,
+body .crm-container#bootstrap-theme div.crm-search-results .crm-pager .element-right {
   margin-right: 0;
   margin-left: 1em;
   margin-bottom: 0;
   white-space: nowrap;
 }
-body .crm-container div.crm-search-results .crm-pager .crm-pager-nav {
+body .crm-container div.crm-search-results .crm-pager .crm-pager-nav,
+body .crm-container#bootstrap-theme div.crm-search-results .crm-pager .crm-pager-nav {
   margin: 0;
 }
-body .crm-container div.crm-search-results .crm-pager .crm-pager-nav a {
+body .crm-container div.crm-search-results .crm-pager .crm-pager-nav a,
+body .crm-container#bootstrap-theme div.crm-search-results .crm-pager .crm-pager-nav a {
   margin-top: 1em;
   margin-bottom: 1em;
 }
 body .crm-container div.crm-search-results tbody tr.even-row,
-body .crm-container div.crm-search-results tbody tr.odd-row {
+body .crm-container div.crm-search-results tbody tr.odd-row,
+body .crm-container#bootstrap-theme div.crm-search-results tbody tr.even-row,
+body .crm-container#bootstrap-theme div.crm-search-results tbody tr.odd-row {
   background-color: rgb(252.1192307692, 250.4730769231, 247.1807692308);
   border: 4px solid transparent;
   border-radius: 0 1em 1em 0;
 }
 body .crm-container div.crm-search-results tbody tr.even-row:hover,
-body .crm-container div.crm-search-results tbody tr.odd-row:hover {
+body .crm-container div.crm-search-results tbody tr.odd-row:hover,
+body .crm-container#bootstrap-theme div.crm-search-results tbody tr.even-row:hover,
+body .crm-container#bootstrap-theme div.crm-search-results tbody tr.odd-row:hover {
   background-color: #eee;
   border-left-color: #bbbbbb;
 }
-body .crm-container ul.select2-results li.select2-result.select2-highlighted div.select2-result-label {
+body .crm-container ul.select2-results li.select2-result.select2-highlighted div.select2-result-label,
+body .crm-container#bootstrap-theme ul.select2-results li.select2-result.select2-highlighted div.select2-result-label {
   color: white;
 }
 
