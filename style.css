@@ -144,7 +144,8 @@ input.submit,
 a.button-cta-red,
 a.button-cta-cyan,
 a.button-cta-jasmine,
-a.button-cta-transparent {
+a.button-cta-transparent,
+a.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -177,7 +178,8 @@ a.button-cta-jasmine {
 }
 
 input.submit,
-a.button-cta-transparent {
+a.button-cta-transparent,
+a.button-primary {
   background: inherit;
   color: #555555;
   text-shadow: none;

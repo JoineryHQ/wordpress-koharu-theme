@@ -78,7 +78,8 @@ input.submit,
 a.button-cta-red,
 a.button-cta-cyan,
 a.button-cta-jasmine,
-a.button-cta-transparent {
+a.button-cta-transparent,
+a.button {
   @include button-cta-base
 }
 a.button-cta-red {
@@ -98,7 +99,8 @@ a.button-cta-jasmine {
 }
 
 input.submit,
-a.button-cta-transparent {
+a.button-cta-transparent,
+a.button-primary {
   @include button-cta-transparent;
 }
 
