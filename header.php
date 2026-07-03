@@ -27,7 +27,7 @@ if (has_nav_menu('primary')) {
 
 if ($dirh) {
     while (($dirElement = readdir($dirh)) !== false) {
-        
+
     }
     closedir($dirh);
 }
@@ -46,7 +46,7 @@ if ($dirh) {
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-  
+
   <header>
     <div class="container">
       <div class="header-row">
@@ -60,20 +60,36 @@ if ($dirh) {
         </a>
 
         <div class="header-actions">
-            <?php // echo do_shortcode('[gtranslate]'); ?>
-          <a class="search-link" href="<?= KM::getMod('koharu_header_search_url') ?>" aria-label="Search">
-            <!-- magnifier -->
-            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle>
-            <path d="M20 20l-3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-            </svg>
-            <span class="icon-link-label">Search</span>
-          </a>
+          <?php
+            $koharu_header_offer_gtranslate  = KM::getMod('koharu_header_offer_gtranslate');
+            $koharu_header_contact_url       = KM::getMod('koharu_header_contact_url');
+            $koharu_header_search_url = KM::getMod('koharu_header_search_url');
+          ?>
+          <?php
+            if ($koharu_header_offer_gtranslate) {
+              echo do_shortcode('[gtranslate]');
+            }
+          ?>
+          <?php if (!empty($koharu_header_contact_url)) : ?>
+            <a class="search-link" href="<?= $koharu_header_contact_url ?>" aria-label="Search">
+              <span class="icon-link-label">Contact Us</span>
+            </a>
+          <?php endif; ?>
+          <?php if (!empty($koharu_header_search_url)) : ?>
+            <a class="search-link" href="<?= $koharu_header_search_url ?>" aria-label="Search">
+              <!-- magnifier -->
+              <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle>
+              <path d="M20 20l-3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+              <span class="icon-link-label">Search</span>
+            </a>
+          <?php endif; ?>
 
           <div class="site-nav-hamburger-wrapper">
             <div class="site-nav-hamburger" aria-hidden="true" aria-label="Menu">
               <span></span><span></span><span></span>
-            </div>          
+            </div>
           </div>
           <?php
             if (is_front_page()) {

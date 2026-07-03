@@ -51,6 +51,20 @@ final class Koharu_Mods {
       ],
       'escape_callback' => 'esc_html',      
     ],
+    'koharu_header_contact_url' => [
+      'setting' => [
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+      ],
+      'control' => [
+        'section' => 'koharu_header_section',
+        'label' => 'Contact Us URL',
+        'type' => 'text',
+        'priority' => 30,
+        'description' => 'If empty, no "Contact Us" item appears in header.',
+      ],
+      'escape_callback' => 'esc_url',
+    ],
     'koharu_header_search_url' => [
       'setting' => [
         'default' => '',
@@ -61,10 +75,24 @@ final class Koharu_Mods {
         'label' => 'Search URL',
         'type' => 'text',
         'priority' => 30,
+        'description' => 'If empty, no "Search" item appears in header.',
       ],
       'escape_callback' => 'esc_url',
     ],
-    
+    'koharu_header_offer_gtranslate' => [
+      'setting' => [
+        'default' => 1,
+        'sanitize_callback' => 'absint',
+      ],
+      'control' => [
+        'section' => 'koharu_header_section',
+        'label' => 'Offer GTranslate',
+        'type' => 'checkbox',
+        'priority' => 40,
+        'description' => 'If this is checked, and the gtranslate plugin is active, display a "translate page" widget.',
+      ],
+      'escape_callback' => 'absint',
+    ],
     // "Homepage Hero" items
     'koharu_hero_title' => [
       'setting' => [
