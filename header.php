@@ -25,7 +25,7 @@ if (has_nav_menu('primary')) {
   ';
 }
 
-if ($dirh) {
+if ($dirh ?? NULL) {
     while (($dirElement = readdir($dirh)) !== false) {
 
     }
