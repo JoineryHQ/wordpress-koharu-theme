@@ -886,6 +886,9 @@ body .crm-container ul.select2-results li.select2-result.select2-highlighted div
 body .crm-container#bootstrap-theme ul.select2-results li.select2-result.select2-highlighted div.select2-result-label {
   color: white;
 }
+body.mod-koharu_general_hideCrmBreadcrumb .crm-container .breadcrumb {
+  display: none;
+}
 
 /* _root.scss */
 :root {

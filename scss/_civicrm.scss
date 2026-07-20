@@ -143,4 +143,13 @@ body {
     }
 
   }
+
+  // Styles when mod 'koharu_general_hideCrmBreadcrumb' is enabled.
+  &.mod-koharu_general_hideCrmBreadcrumb {
+    .crm-container {
+      .breadcrumb {
+        display: none;
+      }
+    }
+  }
 }

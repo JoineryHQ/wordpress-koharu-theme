@@ -10,6 +10,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Koharu_Mods {
 
   protected static $sections = [
+    'koharu_general_section' => [
+      'title' => 'General',
+      'priority' => 10,
+    ],
     'koharu_header_section' => [
       'title' => 'Site Header',
       'priority' => 20,
@@ -24,6 +28,21 @@ final class Koharu_Mods {
     ],
   ];
   protected static $mods = [
+    // "General" items
+    'koharu_general_hideCrmBreadcrumb' => [
+      'setting' => [
+        'default' => 0,
+        'sanitize_callback' => 'absint',
+      ],
+      'control' => [
+        'section' => 'koharu_general_section',
+        'label' => 'Always hide CiviCRM breadcrumb',
+        'type' => 'checkbox',
+        'priority' => 40,
+        'description' => 'If this is checked, pages shown under this theme will always hide any breadcrumb links CiviCRM would display (e.g. CiviCRM > Events)',
+      ],
+      'escape_callback' => 'absint',
+    ],
     // "Site Header" items
     'koharu_header_title' => [
       'setting' => [

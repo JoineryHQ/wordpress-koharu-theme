@@ -1,5 +1,7 @@
 <?php
 
+use Koharu_Mods as KM;
+
 if (!defined('ABSPATH')) {
   exit;
 }
@@ -136,7 +138,11 @@ add_filter('body_class', function($classes) {
   // If page is viewed in a lightbox (per url query params), append a class to body
   if (!empty($_GET['lightbox']) && is_singular()) {
     $classes[] = 'koharu-is-lightbox';
-  }  
+  }
+
+  if (KM::getMod('koharu_general_hideCrmBreadcrumb')) {
+    $classes[] = 'mod-koharu_general_hideCrmBreadcrumb';
+  }
   return $classes;
 });
 
