@@ -4,7 +4,8 @@
 body {
   .crm-container,
   // #bootstrap-theme required here for specificity/priority over civicrm's bootstrap styles.
-  .crm-container#bootstrap-theme {
+  .crm-container#bootstrap-theme,
+  #crm-container {
     // status messages
     .messages {
       border-width: 0;
@@ -142,6 +143,13 @@ body {
       }
     }
 
+    /**
+     * Profile post-field help
+     */
+    div.helprow-post div.content.description {
+      padding-top: 0;
+      padding-bottom: 12px;
+    }
   }
 
   // Styles when mod 'koharu_general_hideCrmBreadcrumb' is enabled.
